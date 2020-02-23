@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PmsBaseAttrValueDao">
+
+    <resultMap type="com.example.demo.entity.PmsBaseAttrValue" id="PmsBaseAttrValueMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="valueName" column="value_name" jdbcType="VARCHAR"/>
+        <result property="attrId" column="attr_id" jdbcType="INTEGER"/>
+        <result property="isEnabled" column="is_enabled" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="PmsBaseAttrValueMap">
+        select id,
+               value_name,
+               attr_id,
+               is_enabled
+        from gmall.pms_base_attr_value
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="PmsBaseAttrValueMap">
+        select id,
+               value_name,
+               attr_id,
+               is_enabled
+        from gmall.pms_base_attr_value
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="PmsBaseAttrValueMap">
+        select
+        id, value_name, attr_id, is_enabled
+        from gmall.pms_base_attr_value
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="valueName != null and valueName != ''">
+                and value_name = #{valueName}
+            </if>
+            <if test="attrId != null">
+                and attr_id = #{attrId}
+            </if>
+            <if test="isEnabled != null and isEnabled != ''">
+                and is_enabled = #{isEnabled}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into gmall.pms_base_attr_value(value_name, attr_id, is_enabled)
+        values (#{valueName}, #{attrId}, #{isEnabled})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update gmall.pms_base_attr_value
+        <set>
+            <if test="valueName != null and valueName != ''">
+                value_name = #{valueName},
+            </if>
+            <if test="attrId != null">
+                attr_id = #{attrId},
+            </if>
+            <if test="isEnabled != null and isEnabled != ''">
+                is_enabled = #{isEnabled},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from gmall.pms_base_attr_value
+        where id = #{id}
+    </delete>
+    <!--通过属性值删除-->
+    <delete id="delete">
+        DELETE FROM gmall.pms_base_attr_value
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="valueName != null and valueName != '' ">
+                AND value_name = #{valueName}
+            </if>
+            <if test="attrId != null">
+                AND attr_id = #{attrId}
+            </if>
+        </where>
+    </delete>
+
+</mapper>

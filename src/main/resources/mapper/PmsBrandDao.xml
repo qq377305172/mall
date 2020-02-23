@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PmsBrandDao">
+
+    <resultMap type="com.example.demo.entity.PmsBrand" id="PmsBrandMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="firstLetter" column="first_letter" jdbcType="VARCHAR"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="factoryStatus" column="factory_status" jdbcType="INTEGER"/>
+        <result property="showStatus" column="show_status" jdbcType="INTEGER"/>
+        <result property="productCount" column="product_count" jdbcType="INTEGER"/>
+        <result property="productCommentCount" column="product_comment_count" jdbcType="INTEGER"/>
+        <result property="logo" column="logo" jdbcType="VARCHAR"/>
+        <result property="bigPic" column="big_pic" jdbcType="VARCHAR"/>
+        <result property="brandStory" column="brand_story" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="PmsBrandMap">
+        select
+          id, name, first_letter, sort, factory_status, show_status, product_count, product_comment_count, logo, big_pic, brand_story
+        from gmall.pms_brand
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="PmsBrandMap">
+        select
+          id, name, first_letter, sort, factory_status, show_status, product_count, product_comment_count, logo, big_pic, brand_story
+        from gmall.pms_brand
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="PmsBrandMap">
+        select
+          id, name, first_letter, sort, factory_status, show_status, product_count, product_comment_count, logo, big_pic, brand_story
+        from gmall.pms_brand
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="firstLetter != null and firstLetter != ''">
+                and first_letter = #{firstLetter}
+            </if>
+            <if test="sort != null">
+                and sort = #{sort}
+            </if>
+            <if test="factoryStatus != null">
+                and factory_status = #{factoryStatus}
+            </if>
+            <if test="showStatus != null">
+                and show_status = #{showStatus}
+            </if>
+            <if test="productCount != null">
+                and product_count = #{productCount}
+            </if>
+            <if test="productCommentCount != null">
+                and product_comment_count = #{productCommentCount}
+            </if>
+            <if test="logo != null and logo != ''">
+                and logo = #{logo}
+            </if>
+            <if test="bigPic != null and bigPic != ''">
+                and big_pic = #{bigPic}
+            </if>
+            <if test="brandStory != null and brandStory != ''">
+                and brand_story = #{brandStory}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into gmall.pms_brand(name, first_letter, sort, factory_status, show_status, product_count, product_comment_count, logo, big_pic, brand_story)
+        values (#{name}, #{firstLetter}, #{sort}, #{factoryStatus}, #{showStatus}, #{productCount}, #{productCommentCount}, #{logo}, #{bigPic}, #{brandStory})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update gmall.pms_brand
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="firstLetter != null and firstLetter != ''">
+                first_letter = #{firstLetter},
+            </if>
+            <if test="sort != null">
+                sort = #{sort},
+            </if>
+            <if test="factoryStatus != null">
+                factory_status = #{factoryStatus},
+            </if>
+            <if test="showStatus != null">
+                show_status = #{showStatus},
+            </if>
+            <if test="productCount != null">
+                product_count = #{productCount},
+            </if>
+            <if test="productCommentCount != null">
+                product_comment_count = #{productCommentCount},
+            </if>
+            <if test="logo != null and logo != ''">
+                logo = #{logo},
+            </if>
+            <if test="bigPic != null and bigPic != ''">
+                big_pic = #{bigPic},
+            </if>
+            <if test="brandStory != null and brandStory != ''">
+                brand_story = #{brandStory},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from gmall.pms_brand where id = #{id}
+    </delete>
+
+</mapper>

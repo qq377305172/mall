@@ -1,0 +1,15 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.PmsProductInfo;
+
+import java.util.List;
+
+/**
+ * @author Whyn
+ * @date 2020/2/20 18:08
+ */
+public interface ProductService {
+    List<PmsProductInfo> queryAllByCatalog(Integer catalog3Id);
+
+    int saveSpuInfo(PmsProductInfo pmsProductInfo);
+}

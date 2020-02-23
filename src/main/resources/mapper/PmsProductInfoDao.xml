@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PmsProductInfoDao">
+
+    <resultMap type="com.example.demo.entity.PmsProductInfo" id="PmsProductInfoMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="productName" column="product_name" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="catalog3Id" column="catalog3_id" jdbcType="INTEGER"/>
+        <result property="tmId" column="tm_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="PmsProductInfoMap">
+        select id,
+               product_name,
+               description,
+               catalog3_id,
+               tm_id
+        from gmall.pms_product_info
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="PmsProductInfoMap">
+        select id,
+               product_name,
+               description,
+               catalog3_id,
+               tm_id
+        from gmall.pms_product_info
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="PmsProductInfoMap">
+        select
+        id, product_name, description, catalog3_id, tm_id
+        from gmall.pms_product_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="productName != null and productName != ''">
+                and product_name = #{productName}
+            </if>
+            <if test="description != null and description != ''">
+                and description = #{description}
+            </if>
+            <if test="catalog3Id != null">
+                and catalog3_id = #{catalog3Id}
+            </if>
+            <if test="tmId != null">
+                and tm_id = #{tmId}
+            </if>
+        </where>
+    </select>
+    <select id="queryAllByLimitCatalog" resultMap="PmsProductInfoMap">
+        SELECT id, product_name, description, catalog3_id, tm_id
+        FROM gmall.pms_product_info
+        WHERE catalog3_id = #{id}
+        LIMIT 1,5
+    </select>
+    <select id="queryAllByCatalog" resultType="com.example.demo.entity.PmsProductInfo">
+        SELECT id, product_name, description, catalog3_id, tm_id
+        FROM gmall.pms_product_info
+        WHERE catalog3_id = #{catalog3Id}
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.example.demo.entity.PmsProductInfo">
+        insert into gmall.pms_product_info(product_name, description, catalog3_id, tm_id)
+        values (#{productName}, #{description}, #{catalog3Id}, #{tmId})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update gmall.pms_product_info
+        <set>
+            <if test="productName != null and productName != ''">
+                product_name = #{productName},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+            <if test="catalog3Id != null">
+                catalog3_id = #{catalog3Id},
+            </if>
+            <if test="tmId != null">
+                tm_id = #{tmId},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from gmall.pms_product_info
+        where id = #{id}
+    </delete>
+
+</mapper>

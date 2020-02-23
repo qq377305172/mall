@@ -1,0 +1,552 @@
+2020-02-23 12:59:43.195  INFO 10208 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on PS-08 with PID 10208 (D:\intellij-idea-projects\demo\target\classes started by Admin in D:\intellij-idea-projects\demo)
+2020-02-23 12:59:43.196  INFO 10208 --- [restartedMain] com.example.demo.DemoApplication         : The following profiles are active: dev
+2020-02-23 12:59:43.370  INFO 10208 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7055a733: startup date [Sun Feb 23 12:59:43 CST 2020]; root of context hierarchy
+2020-02-23 12:59:44.219  INFO 10208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 12:59:44.240  INFO 10208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 12:59:44.263  INFO 10208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 12:59:44.664  INFO 10208 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$209d90b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-23 12:59:45.045  INFO 10208 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2020-02-23 12:59:45.069  INFO 10208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-23 12:59:45.069  INFO 10208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.40
+2020-02-23 12:59:45.159  INFO 10208 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-23 12:59:45.159  INFO 10208 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1789 ms
+2020-02-23 12:59:45.382  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2020-02-23 12:59:45.384  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2020-02-23 12:59:45.387  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-02-23 12:59:45.387  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-02-23 12:59:45.387  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-02-23 12:59:45.388  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-02-23 12:59:45.388  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2020-02-23 12:59:45.425  INFO 10208 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-02-23 12:59:46.067  INFO 10208 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-23 12:59:46.187  INFO 10208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-02-23 12:59:46.197  INFO 10208 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-02-23 12:59:46.267  INFO 10208 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2020-02-23 12:59:46.269  INFO 10208 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-02-23 12:59:46.270  INFO 10208 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2020-02-23 12:59:46.315  INFO 10208 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-02-23 12:59:46.430  INFO 10208 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-23 12:59:46.606  INFO 10208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 12:59:47.284  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7055a733: startup date [Sun Feb 23 12:59:43 CST 2020]; root of context hierarchy
+2020-02-23 12:59:47.351  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveAttrInfo],methods=[POST]}" onto public int com.example.demo.controller.AttrController.saveAttrInfo(com.example.demo.entity.PmsBaseAttrInfo)
+2020-02-23 12:59:47.352  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAttrValueList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrValue> com.example.demo.controller.AttrController.getAttrValueList(java.lang.Long)
+2020-02-23 12:59:47.353  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attrInfoList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrInfo> com.example.demo.controller.AttrController.attrInfoList(java.lang.Long)
+2020-02-23 12:59:47.353  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/baseSaleAttrList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseSaleAttr> com.example.demo.controller.AttrController.baseSaleAttrList()
+2020-02-23 12:59:47.354  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog1],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog1> com.example.demo.controller.CatalogController.getCatalog1()
+2020-02-23 12:59:47.354  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog2],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog2> com.example.demo.controller.CatalogController.getCatalog2(java.lang.Integer)
+2020-02-23 12:59:47.354  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog3],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog3> com.example.demo.controller.CatalogController.getCatalog3(java.lang.Integer)
+2020-02-23 12:59:47.355  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveSpuInfo],methods=[POST]}" onto public int com.example.demo.controller.SpuController.saveSpuInfo(com.example.demo.entity.PmsProductInfo)
+2020-02-23 12:59:47.356  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/spuList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsProductInfo> com.example.demo.controller.SpuController.queryAllByCatalog(java.lang.Integer)
+2020-02-23 12:59:47.357  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-02-23 12:59:47.357  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-02-23 12:59:47.386  INFO 10208 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 12:59:47.386  INFO 10208 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 12:59:47.425  INFO 10208 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 12:59:47.461  WARN 10208 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-02-23 12:59:48.113  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Korvac] version[2.4.6], pid[10208], build[5376dca/2017-07-18T12:17:44Z]
+2020-02-23 12:59:48.114  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Korvac] initializing ...
+2020-02-23 12:59:48.117  INFO 10208 --- [restartedMain] org.elasticsearch.plugins                : [Korvac] modules [], plugins [], sites []
+2020-02-23 12:59:48.137  INFO 10208 --- [restartedMain] org.elasticsearch.env                    : [Korvac] using [1] data paths, mounts [[(D:)]], net usable_space [45.1gb], net total_space [130.2gb], spins? [unknown], types [NTFS]
+2020-02-23 12:59:48.137  INFO 10208 --- [restartedMain] org.elasticsearch.env                    : [Korvac] heap size [3.5gb], compressed ordinary object pointers [true]
+2020-02-23 12:59:49.604  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Korvac] initialized
+2020-02-23 12:59:49.604  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Korvac] starting ...
+2020-02-23 12:59:49.606  INFO 10208 --- [restartedMain] org.elasticsearch.transport              : [Korvac] publish_address {local[1]}, bound_addresses {local[1]}
+2020-02-23 12:59:49.609  INFO 10208 --- [restartedMain] org.elasticsearch.discovery              : [Korvac] elasticsearch/d-3gCOtWSYObqFGX6-nhEQ
+2020-02-23 12:59:49.616  INFO 10208 --- [elasticsearch[Korvac][clusterService#updateTask][T#1]] org.elasticsearch.cluster.service        : [Korvac] new_master {Korvac}{d-3gCOtWSYObqFGX6-nhEQ}{local}{local[1]}{local=true}, reason: local-disco-initial_connect(master)
+2020-02-23 12:59:49.622  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Korvac] started
+2020-02-23 12:59:49.651  INFO 10208 --- [elasticsearch[Korvac][clusterService#updateTask][T#1]] org.elasticsearch.gateway                : [Korvac] recovered [0] indices into cluster_state
+2020-02-23 12:59:50.020  INFO 10208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-23 12:59:50.204  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-02-23 12:59:50.205  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-02-23 12:59:50.206  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-02-23 12:59:50.210  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-02-23 12:59:50.211  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-02-23 12:59:50.215  INFO 10208 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2020-02-23 12:59:50.243  INFO 10208 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2020-02-23 12:59:50.248  INFO 10208 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 7.521 seconds (JVM running for 9.03)
+2020-02-23 12:59:56.667  INFO 10208 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-23 12:59:56.667  INFO 10208 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2020-02-23 12:59:56.691  INFO 10208 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2020-02-23 13:01:14.422  INFO 10208 --- [Thread-21] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7055a733: startup date [Sun Feb 23 12:59:43 CST 2020]; root of context hierarchy
+2020-02-23 13:01:14.423  INFO 10208 --- [Thread-21] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2020-02-23 13:01:14.424  INFO 10208 --- [Thread-21] s.b.a.d.e.ElasticsearchAutoConfiguration : Closing Elasticsearch client
+2020-02-23 13:01:14.424  INFO 10208 --- [Thread-21] org.elasticsearch.node                   : [Korvac] stopping ...
+2020-02-23 13:01:14.428  INFO 10208 --- [Thread-21] org.elasticsearch.node                   : [Korvac] stopped
+2020-02-23 13:01:14.428  INFO 10208 --- [Thread-21] org.elasticsearch.node                   : [Korvac] closing ...
+2020-02-23 13:01:14.434  INFO 10208 --- [Thread-21] org.elasticsearch.node                   : [Korvac] closed
+2020-02-23 13:01:14.434  INFO 10208 --- [Thread-21] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2020-02-23 13:01:14.435  INFO 10208 --- [Thread-21] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2020-02-23 13:01:14.436  INFO 10208 --- [Thread-21] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:01:14.439  INFO 10208 --- [Thread-21] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-02-23 13:01:15.161  INFO 10208 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on PS-08 with PID 10208 (D:\intellij-idea-projects\demo\target\classes started by Admin in D:\intellij-idea-projects\demo)
+2020-02-23 13:01:15.161  INFO 10208 --- [restartedMain] com.example.demo.DemoApplication         : The following profiles are active: dev
+2020-02-23 13:01:15.163  INFO 10208 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7bdd16e: startup date [Sun Feb 23 13:01:15 CST 2020]; root of context hierarchy
+2020-02-23 13:01:15.540  INFO 10208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:01:15.552  INFO 10208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:01:15.563  INFO 10208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:01:15.637  INFO 10208 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$209d90b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-23 13:01:15.706  INFO 10208 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2020-02-23 13:01:15.706  INFO 10208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-23 13:01:15.706  INFO 10208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.40
+2020-02-23 13:01:15.720  INFO 10208 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-23 13:01:15.721  INFO 10208 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 558 ms
+2020-02-23 13:01:15.761  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2020-02-23 13:01:15.762  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2020-02-23 13:01:15.762  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-02-23 13:01:15.762  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-02-23 13:01:15.762  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-02-23 13:01:15.762  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-02-23 13:01:15.762  INFO 10208 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2020-02-23 13:01:15.767  INFO 10208 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-02-23 13:01:16.055  INFO 10208 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2020-02-23 13:01:16.084  INFO 10208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:01:16.085  INFO 10208 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-02-23 13:01:16.093  INFO 10208 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-23 13:01:16.097  INFO 10208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:01:16.297  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7bdd16e: startup date [Sun Feb 23 13:01:15 CST 2020]; root of context hierarchy
+2020-02-23 13:01:16.308  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveAttrInfo],methods=[POST]}" onto public int com.example.demo.controller.AttrController.saveAttrInfo(com.example.demo.entity.PmsBaseAttrInfo)
+2020-02-23 13:01:16.309  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAttrValueList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrValue> com.example.demo.controller.AttrController.getAttrValueList(java.lang.Long)
+2020-02-23 13:01:16.309  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attrInfoList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrInfo> com.example.demo.controller.AttrController.attrInfoList(java.lang.Long)
+2020-02-23 13:01:16.309  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/baseSaleAttrList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseSaleAttr> com.example.demo.controller.AttrController.baseSaleAttrList()
+2020-02-23 13:01:16.310  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog1],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog1> com.example.demo.controller.CatalogController.getCatalog1()
+2020-02-23 13:01:16.310  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog2],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog2> com.example.demo.controller.CatalogController.getCatalog2(java.lang.Integer)
+2020-02-23 13:01:16.311  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog3],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog3> com.example.demo.controller.CatalogController.getCatalog3(java.lang.Integer)
+2020-02-23 13:01:16.312  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveSpuInfo],methods=[POST]}" onto public int com.example.demo.controller.SpuController.saveSpuInfo(com.example.demo.entity.PmsProductInfo)
+2020-02-23 13:01:16.312  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/spuList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsProductInfo> com.example.demo.controller.SpuController.queryAllByCatalog(java.lang.Integer)
+2020-02-23 13:01:16.313  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-02-23 13:01:16.314  INFO 10208 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-02-23 13:01:16.323  INFO 10208 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:01:16.323  INFO 10208 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:01:16.335  INFO 10208 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:01:16.348  WARN 10208 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-02-23 13:01:16.395  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Human Torch] version[2.4.6], pid[10208], build[5376dca/2017-07-18T12:17:44Z]
+2020-02-23 13:01:16.395  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Human Torch] initializing ...
+2020-02-23 13:01:16.395  INFO 10208 --- [restartedMain] org.elasticsearch.plugins                : [Human Torch] modules [], plugins [], sites []
+2020-02-23 13:01:16.397  INFO 10208 --- [restartedMain] org.elasticsearch.env                    : [Human Torch] using [1] data paths, mounts [[(D:)]], net usable_space [45.1gb], net total_space [130.2gb], spins? [unknown], types [NTFS]
+2020-02-23 13:01:16.397  INFO 10208 --- [restartedMain] org.elasticsearch.env                    : [Human Torch] heap size [3.5gb], compressed ordinary object pointers [true]
+2020-02-23 13:01:16.438  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Human Torch] initialized
+2020-02-23 13:01:16.438  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Human Torch] starting ...
+2020-02-23 13:01:16.438  INFO 10208 --- [restartedMain] org.elasticsearch.transport              : [Human Torch] publish_address {local[2]}, bound_addresses {local[2]}
+2020-02-23 13:01:16.439  INFO 10208 --- [restartedMain] org.elasticsearch.discovery              : [Human Torch] elasticsearch/sHb_Nl_nQcyjmOzsA0SpnA
+2020-02-23 13:01:16.439  INFO 10208 --- [elasticsearch[Human Torch][clusterService#updateTask][T#1]] org.elasticsearch.cluster.service        : [Human Torch] new_master {Human Torch}{sHb_Nl_nQcyjmOzsA0SpnA}{local}{local[2]}{local=true}, reason: local-disco-initial_connect(master)
+2020-02-23 13:01:16.440  INFO 10208 --- [restartedMain] org.elasticsearch.node                   : [Human Torch] started
+2020-02-23 13:01:16.443  INFO 10208 --- [elasticsearch[Human Torch][clusterService#updateTask][T#1]] org.elasticsearch.gateway                : [Human Torch] recovered [0] indices into cluster_state
+2020-02-23 13:01:16.503  INFO 10208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-23 13:01:16.724  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-02-23 13:01:16.725  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-02-23 13:01:16.726  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-02-23 13:01:16.733  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-02-23 13:01:16.734  INFO 10208 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-02-23 13:01:16.739  INFO 10208 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2020-02-23 13:01:16.753  INFO 10208 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2020-02-23 13:01:16.756  INFO 10208 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 1.929 seconds (JVM running for 95.538)
+2020-02-23 13:01:19.478  INFO 10208 --- [Thread-35] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7bdd16e: startup date [Sun Feb 23 13:01:15 CST 2020]; root of context hierarchy
+2020-02-23 13:01:19.480  INFO 10208 --- [Thread-35] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2020-02-23 13:01:19.481  INFO 10208 --- [Thread-35] s.b.a.d.e.ElasticsearchAutoConfiguration : Closing Elasticsearch client
+2020-02-23 13:01:19.481  INFO 10208 --- [Thread-35] org.elasticsearch.node                   : [Human Torch] stopping ...
+2020-02-23 13:01:19.482  INFO 10208 --- [Thread-35] org.elasticsearch.node                   : [Human Torch] stopped
+2020-02-23 13:01:19.482  INFO 10208 --- [Thread-35] org.elasticsearch.node                   : [Human Torch] closing ...
+2020-02-23 13:01:19.484  INFO 10208 --- [Thread-35] org.elasticsearch.node                   : [Human Torch] closed
+2020-02-23 13:01:19.484  INFO 10208 --- [Thread-35] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2020-02-23 13:01:19.484  INFO 10208 --- [Thread-35] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2020-02-23 13:01:19.485  INFO 10208 --- [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:01:19.486  INFO 10208 --- [Thread-35] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2020-02-23 13:01:22.330  INFO 9036 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on PS-08 with PID 9036 (D:\intellij-idea-projects\demo\target\classes started by Admin in D:\intellij-idea-projects\demo)
+2020-02-23 13:01:22.331  INFO 9036 --- [restartedMain] com.example.demo.DemoApplication         : The following profiles are active: dev
+2020-02-23 13:01:22.511  INFO 9036 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b29e971: startup date [Sun Feb 23 13:01:22 CST 2020]; root of context hierarchy
+2020-02-23 13:01:23.306  INFO 9036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:01:23.330  INFO 9036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:01:23.353  INFO 9036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:01:23.779  INFO 9036 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$480563bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-23 13:01:24.129  INFO 9036 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2020-02-23 13:01:24.150  INFO 9036 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-23 13:01:24.150  INFO 9036 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.40
+2020-02-23 13:01:24.227  INFO 9036 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-23 13:01:24.228  INFO 9036 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1717 ms
+2020-02-23 13:01:24.437  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2020-02-23 13:01:24.438  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2020-02-23 13:01:24.441  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-02-23 13:01:24.442  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-02-23 13:01:24.442  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-02-23 13:01:24.442  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-02-23 13:01:24.442  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2020-02-23 13:01:24.471  INFO 9036 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-02-23 13:01:25.091  INFO 9036 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-23 13:01:25.194  INFO 9036 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:01:25.204  INFO 9036 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-02-23 13:01:25.258  INFO 9036 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2020-02-23 13:01:25.259  INFO 9036 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-02-23 13:01:25.260  INFO 9036 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2020-02-23 13:01:25.298  INFO 9036 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-02-23 13:01:25.400  INFO 9036 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-23 13:01:25.545  INFO 9036 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:01:26.170  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b29e971: startup date [Sun Feb 23 13:01:22 CST 2020]; root of context hierarchy
+2020-02-23 13:01:26.229  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveAttrInfo],methods=[POST]}" onto public int com.example.demo.controller.AttrController.saveAttrInfo(com.example.demo.entity.PmsBaseAttrInfo)
+2020-02-23 13:01:26.230  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/baseSaleAttrList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseSaleAttr> com.example.demo.controller.AttrController.baseSaleAttrList()
+2020-02-23 13:01:26.231  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attrInfoList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrInfo> com.example.demo.controller.AttrController.attrInfoList(java.lang.Long)
+2020-02-23 13:01:26.231  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAttrValueList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrValue> com.example.demo.controller.AttrController.getAttrValueList(java.lang.Long)
+2020-02-23 13:01:26.232  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog1],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog1> com.example.demo.controller.CatalogController.getCatalog1()
+2020-02-23 13:01:26.232  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog2],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog2> com.example.demo.controller.CatalogController.getCatalog2(java.lang.Integer)
+2020-02-23 13:01:26.232  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog3],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog3> com.example.demo.controller.CatalogController.getCatalog3(java.lang.Integer)
+2020-02-23 13:01:26.233  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveSpuInfo],methods=[POST]}" onto public int com.example.demo.controller.SpuController.saveSpuInfo(com.example.demo.entity.PmsProductInfo)
+2020-02-23 13:01:26.233  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/spuList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsProductInfo> com.example.demo.controller.SpuController.queryAllByCatalog(java.lang.Integer)
+2020-02-23 13:01:26.235  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-02-23 13:01:26.235  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-02-23 13:01:26.264  INFO 9036 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:01:26.264  INFO 9036 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:01:26.300  INFO 9036 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:01:26.334  WARN 9036 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-02-23 13:01:26.918  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Siena Blaze] version[2.4.6], pid[9036], build[5376dca/2017-07-18T12:17:44Z]
+2020-02-23 13:01:26.918  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Siena Blaze] initializing ...
+2020-02-23 13:01:26.921  INFO 9036 --- [restartedMain] org.elasticsearch.plugins                : [Siena Blaze] modules [], plugins [], sites []
+2020-02-23 13:01:26.954  INFO 9036 --- [restartedMain] org.elasticsearch.env                    : [Siena Blaze] using [1] data paths, mounts [[(D:)]], net usable_space [45.1gb], net total_space [130.2gb], spins? [unknown], types [NTFS]
+2020-02-23 13:01:26.954  INFO 9036 --- [restartedMain] org.elasticsearch.env                    : [Siena Blaze] heap size [3.5gb], compressed ordinary object pointers [true]
+2020-02-23 13:01:28.198  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Siena Blaze] initialized
+2020-02-23 13:01:28.198  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Siena Blaze] starting ...
+2020-02-23 13:01:28.200  INFO 9036 --- [restartedMain] org.elasticsearch.transport              : [Siena Blaze] publish_address {local[1]}, bound_addresses {local[1]}
+2020-02-23 13:01:28.202  INFO 9036 --- [restartedMain] org.elasticsearch.discovery              : [Siena Blaze] elasticsearch/d3XBLDmFSoeZny_3F4csZA
+2020-02-23 13:01:28.208  INFO 9036 --- [elasticsearch[Siena Blaze][clusterService#updateTask][T#1]] org.elasticsearch.cluster.service        : [Siena Blaze] new_master {Siena Blaze}{d3XBLDmFSoeZny_3F4csZA}{local}{local[1]}{local=true}, reason: local-disco-initial_connect(master)
+2020-02-23 13:01:28.213  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Siena Blaze] started
+2020-02-23 13:01:28.238  INFO 9036 --- [elasticsearch[Siena Blaze][clusterService#updateTask][T#1]] org.elasticsearch.gateway                : [Siena Blaze] recovered [0] indices into cluster_state
+2020-02-23 13:01:28.579  INFO 9036 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-23 13:01:28.761  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-02-23 13:01:28.762  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-02-23 13:01:28.763  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-02-23 13:01:28.767  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-02-23 13:01:28.768  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-02-23 13:01:28.771  INFO 9036 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2020-02-23 13:01:28.796  INFO 9036 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2020-02-23 13:01:28.801  INFO 9036 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 6.988 seconds (JVM running for 7.797)
+2020-02-23 13:56:01.837  INFO 9036 --- [Thread-21] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5b29e971: startup date [Sun Feb 23 13:01:22 CST 2020]; root of context hierarchy
+2020-02-23 13:56:01.838  INFO 9036 --- [Thread-21] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2020-02-23 13:56:01.839  INFO 9036 --- [Thread-21] s.b.a.d.e.ElasticsearchAutoConfiguration : Closing Elasticsearch client
+2020-02-23 13:56:01.839  INFO 9036 --- [Thread-21] org.elasticsearch.node                   : [Siena Blaze] stopping ...
+2020-02-23 13:56:01.840  INFO 9036 --- [Thread-21] org.elasticsearch.node                   : [Siena Blaze] stopped
+2020-02-23 13:56:01.840  INFO 9036 --- [Thread-21] org.elasticsearch.node                   : [Siena Blaze] closing ...
+2020-02-23 13:56:01.844  INFO 9036 --- [Thread-21] org.elasticsearch.node                   : [Siena Blaze] closed
+2020-02-23 13:56:01.844  INFO 9036 --- [Thread-21] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2020-02-23 13:56:01.845  INFO 9036 --- [Thread-21] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2020-02-23 13:56:01.846  INFO 9036 --- [Thread-21] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:56:01.848  INFO 9036 --- [Thread-21] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-02-23 13:56:02.168  INFO 9036 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on PS-08 with PID 9036 (D:\intellij-idea-projects\demo\target\classes started by Admin in D:\intellij-idea-projects\demo)
+2020-02-23 13:56:02.168  INFO 9036 --- [restartedMain] com.example.demo.DemoApplication         : The following profiles are active: dev
+2020-02-23 13:56:02.170  INFO 9036 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@582c1e74: startup date [Sun Feb 23 13:56:02 CST 2020]; root of context hierarchy
+2020-02-23 13:56:02.556  INFO 9036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:56:02.574  INFO 9036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:56:02.594  INFO 9036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:56:02.728  INFO 9036 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$480563bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-23 13:56:02.869  INFO 9036 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2020-02-23 13:56:02.870  INFO 9036 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-23 13:56:02.871  INFO 9036 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.40
+2020-02-23 13:56:02.895  INFO 9036 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-23 13:56:02.897  INFO 9036 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 727 ms
+2020-02-23 13:56:02.959  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2020-02-23 13:56:02.959  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2020-02-23 13:56:02.960  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-02-23 13:56:02.960  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-02-23 13:56:02.961  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-02-23 13:56:02.962  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-02-23 13:56:02.962  INFO 9036 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2020-02-23 13:56:02.972  INFO 9036 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-02-23 13:56:03.350  INFO 9036 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2020-02-23 13:56:03.380  INFO 9036 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:56:03.381  INFO 9036 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-02-23 13:56:03.390  INFO 9036 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-23 13:56:03.397  INFO 9036 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:56:03.618  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@582c1e74: startup date [Sun Feb 23 13:56:02 CST 2020]; root of context hierarchy
+2020-02-23 13:56:03.631  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveAttrInfo],methods=[POST]}" onto public int com.example.demo.controller.AttrController.saveAttrInfo(com.example.demo.entity.PmsBaseAttrInfo)
+2020-02-23 13:56:03.631  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/baseSaleAttrList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseSaleAttr> com.example.demo.controller.AttrController.baseSaleAttrList()
+2020-02-23 13:56:03.632  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attrInfoList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrInfo> com.example.demo.controller.AttrController.attrInfoList(java.lang.Long)
+2020-02-23 13:56:03.632  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAttrValueList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrValue> com.example.demo.controller.AttrController.getAttrValueList(java.lang.Long)
+2020-02-23 13:56:03.632  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog1],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog1> com.example.demo.controller.CatalogController.getCatalog1()
+2020-02-23 13:56:03.633  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog2],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog2> com.example.demo.controller.CatalogController.getCatalog2(java.lang.Integer)
+2020-02-23 13:56:03.633  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog3],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog3> com.example.demo.controller.CatalogController.getCatalog3(java.lang.Integer)
+2020-02-23 13:56:03.635  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveSpuInfo],methods=[POST]}" onto public int com.example.demo.controller.SpuController.saveSpuInfo(com.example.demo.entity.PmsProductInfo)
+2020-02-23 13:56:03.635  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/spuList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsProductInfo> com.example.demo.controller.SpuController.queryAllByCatalog(java.lang.Integer)
+2020-02-23 13:56:03.637  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-02-23 13:56:03.637  INFO 9036 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-02-23 13:56:03.647  INFO 9036 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:56:03.647  INFO 9036 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:56:03.660  INFO 9036 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:56:03.673  WARN 9036 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-02-23 13:56:03.721  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Ankhi] version[2.4.6], pid[9036], build[5376dca/2017-07-18T12:17:44Z]
+2020-02-23 13:56:03.721  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Ankhi] initializing ...
+2020-02-23 13:56:03.721  INFO 9036 --- [restartedMain] org.elasticsearch.plugins                : [Ankhi] modules [], plugins [], sites []
+2020-02-23 13:56:03.723  INFO 9036 --- [restartedMain] org.elasticsearch.env                    : [Ankhi] using [1] data paths, mounts [[(D:)]], net usable_space [45.1gb], net total_space [130.2gb], spins? [unknown], types [NTFS]
+2020-02-23 13:56:03.723  INFO 9036 --- [restartedMain] org.elasticsearch.env                    : [Ankhi] heap size [3.5gb], compressed ordinary object pointers [true]
+2020-02-23 13:56:03.776  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Ankhi] initialized
+2020-02-23 13:56:03.776  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Ankhi] starting ...
+2020-02-23 13:56:03.776  INFO 9036 --- [restartedMain] org.elasticsearch.transport              : [Ankhi] publish_address {local[2]}, bound_addresses {local[2]}
+2020-02-23 13:56:03.777  INFO 9036 --- [restartedMain] org.elasticsearch.discovery              : [Ankhi] elasticsearch/iQ9r6O0pQMaPgrK-MKGmrA
+2020-02-23 13:56:03.777  INFO 9036 --- [elasticsearch[Ankhi][clusterService#updateTask][T#1]] org.elasticsearch.cluster.service        : [Ankhi] new_master {Ankhi}{iQ9r6O0pQMaPgrK-MKGmrA}{local}{local[2]}{local=true}, reason: local-disco-initial_connect(master)
+2020-02-23 13:56:03.778  INFO 9036 --- [restartedMain] org.elasticsearch.node                   : [Ankhi] started
+2020-02-23 13:56:03.782  INFO 9036 --- [elasticsearch[Ankhi][clusterService#updateTask][T#1]] org.elasticsearch.gateway                : [Ankhi] recovered [0] indices into cluster_state
+2020-02-23 13:56:03.848  INFO 9036 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-23 13:56:04.020  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-02-23 13:56:04.021  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-02-23 13:56:04.021  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-02-23 13:56:04.024  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-02-23 13:56:04.025  INFO 9036 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-02-23 13:56:04.026  INFO 9036 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2020-02-23 13:56:04.032  INFO 9036 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2020-02-23 13:56:04.034  INFO 9036 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 1.928 seconds (JVM running for 3283.03)
+2020-02-23 13:56:04.567  INFO 9036 --- [Thread-35] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@582c1e74: startup date [Sun Feb 23 13:56:02 CST 2020]; root of context hierarchy
+2020-02-23 13:56:04.568  INFO 9036 --- [Thread-35] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2020-02-23 13:56:04.569  INFO 9036 --- [Thread-35] s.b.a.d.e.ElasticsearchAutoConfiguration : Closing Elasticsearch client
+2020-02-23 13:56:04.569  INFO 9036 --- [Thread-35] org.elasticsearch.node                   : [Ankhi] stopping ...
+2020-02-23 13:56:04.570  INFO 9036 --- [Thread-35] org.elasticsearch.node                   : [Ankhi] stopped
+2020-02-23 13:56:04.570  INFO 9036 --- [Thread-35] org.elasticsearch.node                   : [Ankhi] closing ...
+2020-02-23 13:56:04.571  INFO 9036 --- [Thread-35] org.elasticsearch.node                   : [Ankhi] closed
+2020-02-23 13:56:04.572  INFO 9036 --- [Thread-35] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2020-02-23 13:56:04.572  INFO 9036 --- [Thread-35] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2020-02-23 13:56:04.572  INFO 9036 --- [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:56:04.574  INFO 9036 --- [Thread-35] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2020-02-23 13:56:06.720  INFO 4124 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on PS-08 with PID 4124 (D:\intellij-idea-projects\demo\target\classes started by Admin in D:\intellij-idea-projects\demo)
+2020-02-23 13:56:06.720  INFO 4124 --- [restartedMain] com.example.demo.DemoApplication         : The following profiles are active: dev
+2020-02-23 13:56:06.901  INFO 4124 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@424d81ca: startup date [Sun Feb 23 13:56:06 CST 2020]; root of context hierarchy
+2020-02-23 13:56:07.624  INFO 4124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:56:07.643  INFO 4124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:56:07.664  INFO 4124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 13:56:08.023  INFO 4124 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2ec8cbd3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-23 13:56:08.511  INFO 4124 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2020-02-23 13:56:08.531  INFO 4124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-23 13:56:08.532  INFO 4124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.40
+2020-02-23 13:56:08.619  INFO 4124 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-23 13:56:08.619  INFO 4124 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1718 ms
+2020-02-23 13:56:08.873  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2020-02-23 13:56:08.875  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2020-02-23 13:56:08.878  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-02-23 13:56:08.879  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-02-23 13:56:08.879  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-02-23 13:56:08.879  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-02-23 13:56:08.879  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2020-02-23 13:56:08.916  INFO 4124 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-02-23 13:56:09.601  INFO 4124 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-23 13:56:09.709  INFO 4124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:56:09.718  INFO 4124 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-02-23 13:56:09.774  INFO 4124 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2020-02-23 13:56:09.775  INFO 4124 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-02-23 13:56:09.776  INFO 4124 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2020-02-23 13:56:09.812  INFO 4124 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-02-23 13:56:09.905  INFO 4124 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-23 13:56:10.072  INFO 4124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 13:56:10.708  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@424d81ca: startup date [Sun Feb 23 13:56:06 CST 2020]; root of context hierarchy
+2020-02-23 13:56:10.770  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attrInfoList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrInfo> com.example.demo.controller.AttrController.attrInfoList(java.lang.Long)
+2020-02-23 13:56:10.772  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveAttrInfo],methods=[POST]}" onto public int com.example.demo.controller.AttrController.saveAttrInfo(com.example.demo.entity.PmsBaseAttrInfo)
+2020-02-23 13:56:10.772  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/baseSaleAttrList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseSaleAttr> com.example.demo.controller.AttrController.baseSaleAttrList()
+2020-02-23 13:56:10.772  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAttrValueList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrValue> com.example.demo.controller.AttrController.getAttrValueList(java.lang.Long)
+2020-02-23 13:56:10.773  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog2],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog2> com.example.demo.controller.CatalogController.getCatalog2(java.lang.Integer)
+2020-02-23 13:56:10.773  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog3],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog3> com.example.demo.controller.CatalogController.getCatalog3(java.lang.Integer)
+2020-02-23 13:56:10.774  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog1],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog1> com.example.demo.controller.CatalogController.getCatalog1()
+2020-02-23 13:56:10.774  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/spuList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsProductInfo> com.example.demo.controller.SpuController.queryAllByCatalog(java.lang.Integer)
+2020-02-23 13:56:10.774  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveSpuInfo],methods=[POST]}" onto public int com.example.demo.controller.SpuController.saveSpuInfo(com.example.demo.entity.PmsProductInfo)
+2020-02-23 13:56:10.776  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-02-23 13:56:10.776  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-02-23 13:56:10.805  INFO 4124 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:56:10.806  INFO 4124 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:56:10.843  INFO 4124 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 13:56:10.879  WARN 4124 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-02-23 13:56:11.453  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [Vagabond] version[2.4.6], pid[4124], build[5376dca/2017-07-18T12:17:44Z]
+2020-02-23 13:56:11.454  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [Vagabond] initializing ...
+2020-02-23 13:56:11.456  INFO 4124 --- [restartedMain] org.elasticsearch.plugins                : [Vagabond] modules [], plugins [], sites []
+2020-02-23 13:56:11.491  INFO 4124 --- [restartedMain] org.elasticsearch.env                    : [Vagabond] using [1] data paths, mounts [[(D:)]], net usable_space [45.1gb], net total_space [130.2gb], spins? [unknown], types [NTFS]
+2020-02-23 13:56:11.491  INFO 4124 --- [restartedMain] org.elasticsearch.env                    : [Vagabond] heap size [3.5gb], compressed ordinary object pointers [true]
+2020-02-23 13:56:12.719  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [Vagabond] initialized
+2020-02-23 13:56:12.719  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [Vagabond] starting ...
+2020-02-23 13:56:12.721  INFO 4124 --- [restartedMain] org.elasticsearch.transport              : [Vagabond] publish_address {local[1]}, bound_addresses {local[1]}
+2020-02-23 13:56:12.723  INFO 4124 --- [restartedMain] org.elasticsearch.discovery              : [Vagabond] elasticsearch/1duAdPCKRgOocOsOAnk7oQ
+2020-02-23 13:56:12.731  INFO 4124 --- [elasticsearch[Vagabond][clusterService#updateTask][T#1]] org.elasticsearch.cluster.service        : [Vagabond] new_master {Vagabond}{1duAdPCKRgOocOsOAnk7oQ}{local}{local[1]}{local=true}, reason: local-disco-initial_connect(master)
+2020-02-23 13:56:12.736  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [Vagabond] started
+2020-02-23 13:56:12.763  INFO 4124 --- [elasticsearch[Vagabond][clusterService#updateTask][T#1]] org.elasticsearch.gateway                : [Vagabond] recovered [0] indices into cluster_state
+2020-02-23 13:56:13.099  INFO 4124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-23 13:56:13.274  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-02-23 13:56:13.275  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-02-23 13:56:13.275  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-02-23 13:56:13.279  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-02-23 13:56:13.280  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-02-23 13:56:13.283  INFO 4124 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2020-02-23 13:56:13.308  INFO 4124 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2020-02-23 13:56:13.312  INFO 4124 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 7.158 seconds (JVM running for 7.965)
+2020-02-23 13:56:16.875  INFO 4124 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-23 13:56:16.875  INFO 4124 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2020-02-23 13:56:16.900  INFO 4124 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2020-02-23 14:34:28.603  INFO 4124 --- [Thread-21] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@424d81ca: startup date [Sun Feb 23 13:56:06 CST 2020]; root of context hierarchy
+2020-02-23 14:34:28.604  INFO 4124 --- [Thread-21] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2020-02-23 14:34:28.605  INFO 4124 --- [Thread-21] s.b.a.d.e.ElasticsearchAutoConfiguration : Closing Elasticsearch client
+2020-02-23 14:34:28.605  INFO 4124 --- [Thread-21] org.elasticsearch.node                   : [Vagabond] stopping ...
+2020-02-23 14:34:28.606  INFO 4124 --- [Thread-21] org.elasticsearch.node                   : [Vagabond] stopped
+2020-02-23 14:34:28.606  INFO 4124 --- [Thread-21] org.elasticsearch.node                   : [Vagabond] closing ...
+2020-02-23 14:34:28.610  INFO 4124 --- [Thread-21] org.elasticsearch.node                   : [Vagabond] closed
+2020-02-23 14:34:28.610  INFO 4124 --- [Thread-21] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2020-02-23 14:34:28.611  INFO 4124 --- [Thread-21] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2020-02-23 14:34:28.611  INFO 4124 --- [Thread-21] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 14:34:28.613  INFO 4124 --- [Thread-21] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-02-23 14:34:29.066  INFO 4124 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on PS-08 with PID 4124 (D:\intellij-idea-projects\demo\target\classes started by Admin in D:\intellij-idea-projects\demo)
+2020-02-23 14:34:29.066  INFO 4124 --- [restartedMain] com.example.demo.DemoApplication         : The following profiles are active: dev
+2020-02-23 14:34:29.068  INFO 4124 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3bddac25: startup date [Sun Feb 23 14:34:29 CST 2020]; root of context hierarchy
+2020-02-23 14:34:29.463  INFO 4124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 14:34:29.475  INFO 4124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 14:34:29.486  INFO 4124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 14:34:29.562  INFO 4124 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2ec8cbd3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-23 14:34:29.629  INFO 4124 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2020-02-23 14:34:29.629  INFO 4124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-23 14:34:29.629  INFO 4124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.40
+2020-02-23 14:34:29.643  INFO 4124 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-23 14:34:29.644  INFO 4124 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 576 ms
+2020-02-23 14:34:29.685  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2020-02-23 14:34:29.685  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2020-02-23 14:34:29.685  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-02-23 14:34:29.686  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-02-23 14:34:29.686  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-02-23 14:34:29.686  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-02-23 14:34:29.686  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2020-02-23 14:34:29.691  INFO 4124 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-02-23 14:34:30.009  INFO 4124 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2020-02-23 14:34:30.040  INFO 4124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-02-23 14:34:30.040  INFO 4124 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-02-23 14:34:30.050  INFO 4124 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-23 14:34:30.054  INFO 4124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 14:34:30.293  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3bddac25: startup date [Sun Feb 23 14:34:29 CST 2020]; root of context hierarchy
+2020-02-23 14:34:30.303  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attrInfoList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrInfo> com.example.demo.controller.AttrController.attrInfoList(java.lang.Long)
+2020-02-23 14:34:30.304  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveAttrInfo],methods=[POST]}" onto public int com.example.demo.controller.AttrController.saveAttrInfo(com.example.demo.entity.PmsBaseAttrInfo)
+2020-02-23 14:34:30.304  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/baseSaleAttrList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseSaleAttr> com.example.demo.controller.AttrController.baseSaleAttrList()
+2020-02-23 14:34:30.304  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAttrValueList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrValue> com.example.demo.controller.AttrController.getAttrValueList(java.lang.Long)
+2020-02-23 14:34:30.305  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog2],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog2> com.example.demo.controller.CatalogController.getCatalog2(java.lang.Integer)
+2020-02-23 14:34:30.305  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog3],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog3> com.example.demo.controller.CatalogController.getCatalog3(java.lang.Integer)
+2020-02-23 14:34:30.305  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog1],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog1> com.example.demo.controller.CatalogController.getCatalog1()
+2020-02-23 14:34:30.307  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/spuList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsProductInfo> com.example.demo.controller.SpuController.queryAllByCatalog(java.lang.Integer)
+2020-02-23 14:34:30.308  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveSpuInfo],methods=[POST]}" onto public int com.example.demo.controller.SpuController.saveSpuInfo(com.example.demo.entity.PmsProductInfo)
+2020-02-23 14:34:30.308  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/fileUpload],methods=[POST]}" onto public java.lang.String com.example.demo.controller.SpuController.fileUpload(org.springframework.web.multipart.MultipartFile)
+2020-02-23 14:34:30.309  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-02-23 14:34:30.309  INFO 4124 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-02-23 14:34:30.546  INFO 4124 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 14:34:30.546  INFO 4124 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 14:34:31.126  INFO 4124 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 14:34:31.143  WARN 4124 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-02-23 14:34:31.200  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [John Sublime] version[2.4.6], pid[4124], build[5376dca/2017-07-18T12:17:44Z]
+2020-02-23 14:34:31.200  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [John Sublime] initializing ...
+2020-02-23 14:34:31.200  INFO 4124 --- [restartedMain] org.elasticsearch.plugins                : [John Sublime] modules [], plugins [], sites []
+2020-02-23 14:34:31.202  INFO 4124 --- [restartedMain] org.elasticsearch.env                    : [John Sublime] using [1] data paths, mounts [[(D:)]], net usable_space [45.1gb], net total_space [130.2gb], spins? [unknown], types [NTFS]
+2020-02-23 14:34:31.202  INFO 4124 --- [restartedMain] org.elasticsearch.env                    : [John Sublime] heap size [3.5gb], compressed ordinary object pointers [true]
+2020-02-23 14:34:31.258  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [John Sublime] initialized
+2020-02-23 14:34:31.258  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [John Sublime] starting ...
+2020-02-23 14:34:31.258  INFO 4124 --- [restartedMain] org.elasticsearch.transport              : [John Sublime] publish_address {local[2]}, bound_addresses {local[2]}
+2020-02-23 14:34:31.259  INFO 4124 --- [restartedMain] org.elasticsearch.discovery              : [John Sublime] elasticsearch/VoOumv_gSTi5IeLF48bnmA
+2020-02-23 14:34:31.259  INFO 4124 --- [elasticsearch[John Sublime][clusterService#updateTask][T#1]] org.elasticsearch.cluster.service        : [John Sublime] new_master {John Sublime}{VoOumv_gSTi5IeLF48bnmA}{local}{local[2]}{local=true}, reason: local-disco-initial_connect(master)
+2020-02-23 14:34:31.259  INFO 4124 --- [restartedMain] org.elasticsearch.node                   : [John Sublime] started
+2020-02-23 14:34:31.263  INFO 4124 --- [elasticsearch[John Sublime][clusterService#updateTask][T#1]] org.elasticsearch.gateway                : [John Sublime] recovered [0] indices into cluster_state
+2020-02-23 14:34:31.326  INFO 4124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-23 14:34:31.503  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-02-23 14:34:31.503  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-02-23 14:34:31.503  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-02-23 14:34:31.507  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-02-23 14:34:31.508  INFO 4124 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-02-23 14:34:31.509  INFO 4124 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2020-02-23 14:34:31.515  INFO 4124 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2020-02-23 14:34:31.517  INFO 4124 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 2.513 seconds (JVM running for 2306.169)
+2020-02-23 14:34:32.671  INFO 4124 --- [Thread-35] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3bddac25: startup date [Sun Feb 23 14:34:29 CST 2020]; root of context hierarchy
+2020-02-23 14:34:32.672  INFO 4124 --- [Thread-35] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2020-02-23 14:34:32.673  INFO 4124 --- [Thread-35] s.b.a.d.e.ElasticsearchAutoConfiguration : Closing Elasticsearch client
+2020-02-23 14:34:32.673  INFO 4124 --- [Thread-35] org.elasticsearch.node                   : [John Sublime] stopping ...
+2020-02-23 14:34:32.674  INFO 4124 --- [Thread-35] org.elasticsearch.node                   : [John Sublime] stopped
+2020-02-23 14:34:32.674  INFO 4124 --- [Thread-35] org.elasticsearch.node                   : [John Sublime] closing ...
+2020-02-23 14:34:32.675  INFO 4124 --- [Thread-35] org.elasticsearch.node                   : [John Sublime] closed
+2020-02-23 14:34:32.675  INFO 4124 --- [Thread-35] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2020-02-23 14:34:32.676  INFO 4124 --- [Thread-35] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2020-02-23 14:34:32.676  INFO 4124 --- [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 14:34:32.677  INFO 4124 --- [Thread-35] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2020-02-23 14:34:35.142  INFO 5872 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on PS-08 with PID 5872 (D:\intellij-idea-projects\demo\target\classes started by Admin in D:\intellij-idea-projects\demo)
+2020-02-23 14:34:35.143  INFO 5872 --- [restartedMain] com.example.demo.DemoApplication         : The following profiles are active: dev
+2020-02-23 14:34:35.317  INFO 5872 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75da95c0: startup date [Sun Feb 23 14:34:35 CST 2020]; root of context hierarchy
+2020-02-23 14:34:36.015  INFO 5872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 14:34:36.036  INFO 5872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 14:34:36.059  INFO 5872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-23 14:34:36.468  INFO 5872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3a91de59] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-23 14:34:36.810  INFO 5872 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2020-02-23 14:34:36.829  INFO 5872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-23 14:34:36.829  INFO 5872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.40
+2020-02-23 14:34:36.905  INFO 5872 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-23 14:34:36.905  INFO 5872 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1588 ms
+2020-02-23 14:34:37.099  INFO 5872 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2020-02-23 14:34:37.100  INFO 5872 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2020-02-23 14:34:37.104  INFO 5872 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-02-23 14:34:37.104  INFO 5872 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-02-23 14:34:37.105  INFO 5872 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-02-23 14:34:37.105  INFO 5872 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-02-23 14:34:37.105  INFO 5872 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2020-02-23 14:34:37.139  INFO 5872 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-02-23 14:34:37.769  INFO 5872 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-23 14:34:37.881  INFO 5872 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-02-23 14:34:37.891  INFO 5872 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-02-23 14:34:37.950  INFO 5872 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2020-02-23 14:34:37.951  INFO 5872 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-02-23 14:34:37.952  INFO 5872 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2020-02-23 14:34:37.992  INFO 5872 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-02-23 14:34:38.092  INFO 5872 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-02-23 14:34:38.252  INFO 5872 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 14:34:38.850  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75da95c0: startup date [Sun Feb 23 14:34:35 CST 2020]; root of context hierarchy
+2020-02-23 14:34:38.907  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attrInfoList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrInfo> com.example.demo.controller.AttrController.attrInfoList(java.lang.Long)
+2020-02-23 14:34:38.909  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/baseSaleAttrList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseSaleAttr> com.example.demo.controller.AttrController.baseSaleAttrList()
+2020-02-23 14:34:38.909  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveAttrInfo],methods=[POST]}" onto public int com.example.demo.controller.AttrController.saveAttrInfo(com.example.demo.entity.PmsBaseAttrInfo)
+2020-02-23 14:34:38.909  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAttrValueList],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseAttrValue> com.example.demo.controller.AttrController.getAttrValueList(java.lang.Long)
+2020-02-23 14:34:38.910  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog2],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog2> com.example.demo.controller.CatalogController.getCatalog2(java.lang.Integer)
+2020-02-23 14:34:38.910  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog1],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog1> com.example.demo.controller.CatalogController.getCatalog1()
+2020-02-23 14:34:38.910  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getCatalog3],methods=[POST]}" onto public java.util.List<com.example.demo.entity.PmsBaseCatalog3> com.example.demo.controller.CatalogController.getCatalog3(java.lang.Integer)
+2020-02-23 14:34:38.911  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/spuList],methods=[GET]}" onto public java.util.List<com.example.demo.entity.PmsProductInfo> com.example.demo.controller.SpuController.queryAllByCatalog(java.lang.Integer)
+2020-02-23 14:34:38.911  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/saveSpuInfo],methods=[POST]}" onto public int com.example.demo.controller.SpuController.saveSpuInfo(com.example.demo.entity.PmsProductInfo)
+2020-02-23 14:34:38.911  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/fileUpload],methods=[POST]}" onto public java.lang.String com.example.demo.controller.SpuController.fileUpload(org.springframework.web.multipart.MultipartFile)
+2020-02-23 14:34:38.912  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-02-23 14:34:38.913  INFO 5872 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-02-23 14:34:38.940  INFO 5872 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 14:34:38.940  INFO 5872 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 14:34:38.974  INFO 5872 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-02-23 14:34:39.007  WARN 5872 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-02-23 14:34:39.567  INFO 5872 --- [restartedMain] org.elasticsearch.node                   : [Blitziana] version[2.4.6], pid[5872], build[5376dca/2017-07-18T12:17:44Z]
+2020-02-23 14:34:39.568  INFO 5872 --- [restartedMain] org.elasticsearch.node                   : [Blitziana] initializing ...
+2020-02-23 14:34:39.570  INFO 5872 --- [restartedMain] org.elasticsearch.plugins                : [Blitziana] modules [], plugins [], sites []
+2020-02-23 14:34:39.585  INFO 5872 --- [restartedMain] org.elasticsearch.env                    : [Blitziana] using [1] data paths, mounts [[(D:)]], net usable_space [45.1gb], net total_space [130.2gb], spins? [unknown], types [NTFS]
+2020-02-23 14:34:39.586  INFO 5872 --- [restartedMain] org.elasticsearch.env                    : [Blitziana] heap size [3.5gb], compressed ordinary object pointers [true]
+2020-02-23 14:34:40.849  INFO 5872 --- [restartedMain] org.elasticsearch.node                   : [Blitziana] initialized
+2020-02-23 14:34:40.849  INFO 5872 --- [restartedMain] org.elasticsearch.node                   : [Blitziana] starting ...
+2020-02-23 14:34:40.851  INFO 5872 --- [restartedMain] org.elasticsearch.transport              : [Blitziana] publish_address {local[1]}, bound_addresses {local[1]}
+2020-02-23 14:34:40.853  INFO 5872 --- [restartedMain] org.elasticsearch.discovery              : [Blitziana] elasticsearch/Ij-xcka2SPyGLwSC-uDUaQ
+2020-02-23 14:34:40.860  INFO 5872 --- [elasticsearch[Blitziana][clusterService#updateTask][T#1]] org.elasticsearch.cluster.service        : [Blitziana] new_master {Blitziana}{Ij-xcka2SPyGLwSC-uDUaQ}{local}{local[1]}{local=true}, reason: local-disco-initial_connect(master)
+2020-02-23 14:34:40.865  INFO 5872 --- [restartedMain] org.elasticsearch.node                   : [Blitziana] started
+2020-02-23 14:34:40.894  INFO 5872 --- [elasticsearch[Blitziana][clusterService#updateTask][T#1]] org.elasticsearch.gateway                : [Blitziana] recovered [0] indices into cluster_state
+2020-02-23 14:34:41.285  INFO 5872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-23 14:34:41.472  INFO 5872 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-02-23 14:34:41.473  INFO 5872 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2020-02-23 14:34:41.473  INFO 5872 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-02-23 14:34:41.479  INFO 5872 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2020-02-23 14:34:41.479  INFO 5872 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2020-02-23 14:34:41.483  INFO 5872 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2020-02-23 14:34:41.507  INFO 5872 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2020-02-23 14:34:41.512  INFO 5872 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 6.865 seconds (JVM running for 7.817)
+2020-02-23 14:41:19.952  INFO 5872 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-23 14:41:19.952  INFO 5872 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2020-02-23 14:41:19.976  INFO 5872 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2020-02-23 14:50:19.724  INFO 5872 --- [Thread-24] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75da95c0: startup date [Sun Feb 23 14:34:35 CST 2020]; root of context hierarchy
+2020-02-23 14:50:19.725  INFO 5872 --- [Thread-24] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2020-02-23 14:50:19.726  INFO 5872 --- [Thread-24] s.b.a.d.e.ElasticsearchAutoConfiguration : Closing Elasticsearch client
+2020-02-23 14:50:19.726  INFO 5872 --- [Thread-24] org.elasticsearch.node                   : [Blitziana] stopping ...
+2020-02-23 14:50:19.727  INFO 5872 --- [Thread-24] org.elasticsearch.node                   : [Blitziana] stopped
+2020-02-23 14:50:19.727  INFO 5872 --- [Thread-24] org.elasticsearch.node                   : [Blitziana] closing ...
+2020-02-23 14:50:19.730  INFO 5872 --- [Thread-24] org.elasticsearch.node                   : [Blitziana] closed
+2020-02-23 14:50:19.731  INFO 5872 --- [Thread-24] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2020-02-23 14:50:19.731  INFO 5872 --- [Thread-24] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2020-02-23 14:50:19.732  INFO 5872 --- [Thread-24] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-02-23 14:50:19.734  INFO 5872 --- [Thread-24] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
