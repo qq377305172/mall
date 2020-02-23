@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c39539b-b135-4c68-b43c-58dd33b7094c" name="Default Changelist" comment="" />
+    <list default="true" id="4c39539b-b135-4c68-b43c-58dd33b7094c" name="Default Changelist" comment="上传项目">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +56,14 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -161,12 +171,45 @@
       <workItem from="1582249857622" duration="13569000" />
       <workItem from="1582342036948" duration="12443000" />
       <workItem from="1582430669428" duration="7351000" />
-      <workItem from="1582448955335" duration="846000" />
+      <workItem from="1582448955335" duration="2382000" />
+      <workItem from="1582453118983" duration="606000" />
     </task>
+    <task id="LOCAL-00001" summary="上传项目">
+      <created>1582449874508</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582449874509</updated>
+    </task>
+    <task id="LOCAL-00002" summary="上传项目">
+      <created>1582450010961</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582450010961</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="上传项目" />
+    <option name="LAST_COMMIT_MESSAGE" value="上传项目" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582194285696">
@@ -189,10 +232,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1582267630838" />
-    <state x="560" y="121" key="CommitChangelistDialog2" timestamp="1582449886811">
+    <state x="560" y="121" key="CommitChangelistDialog2" timestamp="1582450180571">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="560" y="121" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1582449886811" />
+    <state x="560" y="121" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1582450180571" />
     <state width="458" height="466" key="DebuggerActiveHint" timestamp="1582278701545">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -261,10 +304,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="490" y="180" key="Maven.ArtifactSearchDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1582266605368" />
+    <state x="669" y="241" key="MultipleFileMergeDialog" timestamp="1582460018651">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="669" y="241" key="MultipleFileMergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1582460018651" />
     <state x="461" y="167" key="SettingsEditor" timestamp="1582435268435">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="167" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1582435268435" />
+    <state x="552" y="247" key="Vcs.Push.Dialog.v2" timestamp="1582450202858">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="247" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1582450202858" />
+    <state x="752" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582460027346">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="752" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1582460027346" />
     <state x="1134" y="346" key="extract.method.dialog" timestamp="1582274299504">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -277,6 +332,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="702" y="153" key="refactoring.ChangeSignatureDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1582115371882" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1582450430080">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1582450430080" />
     <state x="764" y="429" key="svn.upgradeDialog" timestamp="1582078445896">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
