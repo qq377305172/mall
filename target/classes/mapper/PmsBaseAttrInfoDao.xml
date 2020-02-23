@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PmsBaseAttrInfoDao">
+
+    <resultMap type="com.example.demo.entity.PmsBaseAttrInfo" id="PmsBaseAttrInfoMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="attrName" column="attr_name" jdbcType="VARCHAR"/>
+        <result property="catalog3Id" column="catalog3_id" jdbcType="INTEGER"/>
+        <result property="isEnabled" column="is_enabled" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="PmsBaseAttrInfoMap">
+        select id,
+               attr_name,
+               catalog3_id,
+               is_enabled
+        from gmall.pms_base_attr_info
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="PmsBaseAttrInfoMap">
+        select id,
+               attr_name,
+               catalog3_id,
+               is_enabled
+        from gmall.pms_base_attr_info
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="PmsBaseAttrInfoMap">
+        select
+        id, attr_name, catalog3_id, is_enabled
+        from gmall.pms_base_attr_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="attrName != null and attrName != ''">
+                and attr_name = #{attrName}
+            </if>
+            <if test="catalog3Id != null">
+                and catalog3_id = #{catalog3Id}
+            </if>
+            <if test="isEnabled != null and isEnabled != ''">
+                and is_enabled = #{isEnabled}
+            </if>
+        </where>
+    </select>
+    <select id="queryAllByCatalog" resultType="com.example.demo.entity.PmsBaseAttrInfo">
+        SELECT id, attr_name, catalog3_id, is_enabled
+        FROM gmall.pms_base_attr_info
+        WHERE catalog3_id = #{catalog3Id}
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.example.demo.entity.PmsBaseAttrInfo">
+        insert into gmall.pms_base_attr_info(attr_name, catalog3_id, is_enabled)
+        values (#{attrName}, #{catalog3Id}, #{isEnabled})
+<!--        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">SELECT LAST_INSERT_ID() AS id</selectKey>-->
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update gmall.pms_base_attr_info
+        <set>
+            <if test="attrName != null and attrName != ''">
+                attr_name = #{attrName},
+            </if>
+            <if test="catalog3Id != null">
+                catalog3_id = #{catalog3Id},
+            </if>
+            <if test="isEnabled != null and isEnabled != ''">
+                is_enabled = #{isEnabled},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from gmall.pms_base_attr_info
+        where id = #{id}
+    </delete>
+
+</mapper>

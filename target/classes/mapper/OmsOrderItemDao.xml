@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.OmsOrderItemDao">
+
+    <resultMap type="com.example.demo.entity.OmsOrderItem" id="OmsOrderItemMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="orderId" column="order_id" jdbcType="INTEGER"/>
+        <result property="orderSn" column="order_sn" jdbcType="VARCHAR"/>
+        <result property="productId" column="product_id" jdbcType="INTEGER"/>
+        <result property="productPic" column="product_pic" jdbcType="VARCHAR"/>
+        <result property="productName" column="product_name" jdbcType="VARCHAR"/>
+        <result property="productBrand" column="product_brand" jdbcType="VARCHAR"/>
+        <result property="productSn" column="product_sn" jdbcType="VARCHAR"/>
+        <result property="productPrice" column="product_price" jdbcType="NUMERIC"/>
+        <result property="productQuantity" column="product_quantity" jdbcType="INTEGER"/>
+        <result property="productSkuId" column="product_sku_id" jdbcType="INTEGER"/>
+        <result property="productSkuCode" column="product_sku_code" jdbcType="VARCHAR"/>
+        <result property="productCategoryId" column="product_category_id" jdbcType="INTEGER"/>
+        <result property="sp1" column="sp1" jdbcType="VARCHAR"/>
+        <result property="sp2" column="sp2" jdbcType="VARCHAR"/>
+        <result property="sp3" column="sp3" jdbcType="VARCHAR"/>
+        <result property="promotionName" column="promotion_name" jdbcType="VARCHAR"/>
+        <result property="promotionAmount" column="promotion_amount" jdbcType="NUMERIC"/>
+        <result property="couponAmount" column="coupon_amount" jdbcType="NUMERIC"/>
+        <result property="integrationAmount" column="integration_amount" jdbcType="NUMERIC"/>
+        <result property="realAmount" column="real_amount" jdbcType="NUMERIC"/>
+        <result property="giftIntegration" column="gift_integration" jdbcType="INTEGER"/>
+        <result property="giftGrowth" column="gift_growth" jdbcType="INTEGER"/>
+        <result property="productAttr" column="product_attr" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="OmsOrderItemMap">
+        select
+          id, order_id, order_sn, product_id, product_pic, product_name, product_brand, product_sn, product_price, product_quantity, product_sku_id, product_sku_code, product_category_id, sp1, sp2, sp3, promotion_name, promotion_amount, coupon_amount, integration_amount, real_amount, gift_integration, gift_growth, product_attr
+        from gmall.oms_order_item
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="OmsOrderItemMap">
+        select
+          id, order_id, order_sn, product_id, product_pic, product_name, product_brand, product_sn, product_price, product_quantity, product_sku_id, product_sku_code, product_category_id, sp1, sp2, sp3, promotion_name, promotion_amount, coupon_amount, integration_amount, real_amount, gift_integration, gift_growth, product_attr
+        from gmall.oms_order_item
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="OmsOrderItemMap">
+        select
+          id, order_id, order_sn, product_id, product_pic, product_name, product_brand, product_sn, product_price, product_quantity, product_sku_id, product_sku_code, product_category_id, sp1, sp2, sp3, promotion_name, promotion_amount, coupon_amount, integration_amount, real_amount, gift_integration, gift_growth, product_attr
+        from gmall.oms_order_item
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="orderId != null">
+                and order_id = #{orderId}
+            </if>
+            <if test="orderSn != null and orderSn != ''">
+                and order_sn = #{orderSn}
+            </if>
+            <if test="productId != null">
+                and product_id = #{productId}
+            </if>
+            <if test="productPic != null and productPic != ''">
+                and product_pic = #{productPic}
+            </if>
+            <if test="productName != null and productName != ''">
+                and product_name = #{productName}
+            </if>
+            <if test="productBrand != null and productBrand != ''">
+                and product_brand = #{productBrand}
+            </if>
+            <if test="productSn != null and productSn != ''">
+                and product_sn = #{productSn}
+            </if>
+            <if test="productPrice != null">
+                and product_price = #{productPrice}
+            </if>
+            <if test="productQuantity != null">
+                and product_quantity = #{productQuantity}
+            </if>
+            <if test="productSkuId != null">
+                and product_sku_id = #{productSkuId}
+            </if>
+            <if test="productSkuCode != null and productSkuCode != ''">
+                and product_sku_code = #{productSkuCode}
+            </if>
+            <if test="productCategoryId != null">
+                and product_category_id = #{productCategoryId}
+            </if>
+            <if test="sp1 != null and sp1 != ''">
+                and sp1 = #{sp1}
+            </if>
+            <if test="sp2 != null and sp2 != ''">
+                and sp2 = #{sp2}
+            </if>
+            <if test="sp3 != null and sp3 != ''">
+                and sp3 = #{sp3}
+            </if>
+            <if test="promotionName != null and promotionName != ''">
+                and promotion_name = #{promotionName}
+            </if>
+            <if test="promotionAmount != null">
+                and promotion_amount = #{promotionAmount}
+            </if>
+            <if test="couponAmount != null">
+                and coupon_amount = #{couponAmount}
+            </if>
+            <if test="integrationAmount != null">
+                and integration_amount = #{integrationAmount}
+            </if>
+            <if test="realAmount != null">
+                and real_amount = #{realAmount}
+            </if>
+            <if test="giftIntegration != null">
+                and gift_integration = #{giftIntegration}
+            </if>
+            <if test="giftGrowth != null">
+                and gift_growth = #{giftGrowth}
+            </if>
+            <if test="productAttr != null and productAttr != ''">
+                and product_attr = #{productAttr}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into gmall.oms_order_item(order_id, order_sn, product_id, product_pic, product_name, product_brand, product_sn, product_price, product_quantity, product_sku_id, product_sku_code, product_category_id, sp1, sp2, sp3, promotion_name, promotion_amount, coupon_amount, integration_amount, real_amount, gift_integration, gift_growth, product_attr)
+        values (#{orderId}, #{orderSn}, #{productId}, #{productPic}, #{productName}, #{productBrand}, #{productSn}, #{productPrice}, #{productQuantity}, #{productSkuId}, #{productSkuCode}, #{productCategoryId}, #{sp1}, #{sp2}, #{sp3}, #{promotionName}, #{promotionAmount}, #{couponAmount}, #{integrationAmount}, #{realAmount}, #{giftIntegration}, #{giftGrowth}, #{productAttr})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update gmall.oms_order_item
+        <set>
+            <if test="orderId != null">
+                order_id = #{orderId},
+            </if>
+            <if test="orderSn != null and orderSn != ''">
+                order_sn = #{orderSn},
+            </if>
+            <if test="productId != null">
+                product_id = #{productId},
+            </if>
+            <if test="productPic != null and productPic != ''">
+                product_pic = #{productPic},
+            </if>
+            <if test="productName != null and productName != ''">
+                product_name = #{productName},
+            </if>
+            <if test="productBrand != null and productBrand != ''">
+                product_brand = #{productBrand},
+            </if>
+            <if test="productSn != null and productSn != ''">
+                product_sn = #{productSn},
+            </if>
+            <if test="productPrice != null">
+                product_price = #{productPrice},
+            </if>
+            <if test="productQuantity != null">
+                product_quantity = #{productQuantity},
+            </if>
+            <if test="productSkuId != null">
+                product_sku_id = #{productSkuId},
+            </if>
+            <if test="productSkuCode != null and productSkuCode != ''">
+                product_sku_code = #{productSkuCode},
+            </if>
+            <if test="productCategoryId != null">
+                product_category_id = #{productCategoryId},
+            </if>
+            <if test="sp1 != null and sp1 != ''">
+                sp1 = #{sp1},
+            </if>
+            <if test="sp2 != null and sp2 != ''">
+                sp2 = #{sp2},
+            </if>
+            <if test="sp3 != null and sp3 != ''">
+                sp3 = #{sp3},
+            </if>
+            <if test="promotionName != null and promotionName != ''">
+                promotion_name = #{promotionName},
+            </if>
+            <if test="promotionAmount != null">
+                promotion_amount = #{promotionAmount},
+            </if>
+            <if test="couponAmount != null">
+                coupon_amount = #{couponAmount},
+            </if>
+            <if test="integrationAmount != null">
+                integration_amount = #{integrationAmount},
+            </if>
+            <if test="realAmount != null">
+                real_amount = #{realAmount},
+            </if>
+            <if test="giftIntegration != null">
+                gift_integration = #{giftIntegration},
+            </if>
+            <if test="giftGrowth != null">
+                gift_growth = #{giftGrowth},
+            </if>
+            <if test="productAttr != null and productAttr != ''">
+                product_attr = #{productAttr},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from gmall.oms_order_item where id = #{id}
+    </delete>
+
+</mapper>
