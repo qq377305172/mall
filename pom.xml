@@ -30,6 +30,12 @@
     </build>
 
     <dependencies>
+        <!--fastdfs-client-->
+        <dependency>
+            <groupId>org.csource</groupId>
+            <artifactId>fastdfs-client-java</artifactId>
+            <version>1.29-SNAPSHOT</version>
+        </dependency>
         <!--整合jfinal-->
         <dependency>
             <groupId>com.jfinal</groupId>
@@ -47,11 +53,11 @@
             <artifactId>logstash-logback-encoder</artifactId>
             <version>4.8</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba</groupId>-->
-<!--            <artifactId>fastjson</artifactId>-->
-<!--            <version>1.2.26</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.alibaba</groupId>-->
+        <!--            <artifactId>fastjson</artifactId>-->
+        <!--            <version>1.2.26</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-activemq</artifactId>
