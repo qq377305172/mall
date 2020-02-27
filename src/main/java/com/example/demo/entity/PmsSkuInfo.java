@@ -4,11 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 库存单元表(PmsSkuInfo)实体类
@@ -58,6 +56,14 @@ public class PmsSkuInfo implements Serializable {
      * 默认显示图片(冗余)
      */
     private String skuDefaultImg;
+    @Transient
+    private Long spuId;
+    @Transient
+    private List<PmsSkuImage> skuImageList;
+    @Transient
+    private List<PmsSkuAttrValue> skuAttrValueList;
+    @Transient
+    private List<PmsSkuSaleAttrValue> skuSaleAttrValueList;
 
 
 }

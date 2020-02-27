@@ -1,8 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.PmsBaseAttrInfo;
-import com.example.demo.entity.PmsBaseAttrValue;
-import com.example.demo.entity.PmsBaseSaleAttr;
+import com.example.demo.entity.*;
 
 import java.util.List;
 
@@ -18,4 +16,8 @@ public interface AttrService {
     int saveAttrInfo(PmsBaseAttrInfo pmsBaseAttrInfo);
 
     List<PmsBaseAttrValue> getAttrValueListByAttrId(Long attrId);
+
+    List<PmsProductSaleAttr> getSpuSaleAttrListBySpuId(Long spuId);
+
+    List<PmsProductImage> getSpuImageListBySpuId(Long spuId);
 }

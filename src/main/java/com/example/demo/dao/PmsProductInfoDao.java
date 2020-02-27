@@ -48,7 +48,7 @@ public interface PmsProductInfoDao {
      * @param pmsProductInfo 实例对象
      * @return 影响行数
      */
-    Long insert(PmsProductInfo pmsProductInfo);
+    int insert(PmsProductInfo pmsProductInfo);
 
     /**
      * 修改数据

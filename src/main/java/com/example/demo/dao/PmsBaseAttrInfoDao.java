@@ -45,7 +45,7 @@ public interface PmsBaseAttrInfoDao {
      * @param pmsBaseAttrInfo 实例对象
      * @return 影响行数
      */
-    Long insert(PmsBaseAttrInfo pmsBaseAttrInfo);
+    int insert(PmsBaseAttrInfo pmsBaseAttrInfo);
 
     /**
      * 修改数据

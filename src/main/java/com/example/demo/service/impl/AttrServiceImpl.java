@@ -1,12 +1,9 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.dao.PmsBaseAttrInfoDao;
-import com.example.demo.dao.PmsBaseAttrValueDao;
-import com.example.demo.dao.PmsBaseSaleAttrDao;
-import com.example.demo.entity.PmsBaseAttrInfo;
-import com.example.demo.entity.PmsBaseAttrValue;
-import com.example.demo.entity.PmsBaseSaleAttr;
+import com.example.demo.dao.*;
+import com.example.demo.entity.*;
 import com.example.demo.service.AttrService;
+import org.apache.activemq.broker.region.policy.PendingSubscriberMessageStoragePolicy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -30,6 +27,12 @@ public class AttrServiceImpl implements AttrService {
     PmsBaseSaleAttrDao pmsBaseSaleAttrDao;
     @Resource
     PmsBaseAttrValueDao pmsBaseAttrValueDao;
+    @Resource
+    PmsProductSaleAttrDao pmsProductSaleAttrDao;
+    @Resource
+    private PmsProductImageDao pmsProductImageDao;
+    @Resource
+    private PmsProductSaleAttrValueDao pmsProductSaleAttrValueDao;
 
     @Override
     public List<PmsBaseAttrInfo> queryAllByCatalog(Long catalog3Id) {
@@ -89,7 +92,8 @@ public class AttrServiceImpl implements AttrService {
     }
 
     private int insertInfo(PmsBaseAttrInfo pmsBaseAttrInfo) {
-        Long id = pmsBaseAttrInfoDao.insert(pmsBaseAttrInfo);
+        pmsBaseAttrInfoDao.insert(pmsBaseAttrInfo);
+        Long id = pmsBaseAttrInfo.getId();
         if (null == id || id <= 0) {
             logger.error("插入属性名称失败,执行回滚操作");
             throw new RuntimeException();
@@ -108,5 +112,26 @@ public class AttrServiceImpl implements AttrService {
         PmsBaseAttrValue pmsBaseAttrValue = new PmsBaseAttrValue();
         pmsBaseAttrValue.setAttrId(attrId);
         return pmsBaseAttrValueDao.queryAll(pmsBaseAttrValue);
+    }
+
+    @Override
+    public List<PmsProductSaleAttr> getSpuSaleAttrListBySpuId(Long spuId) {
+        PmsProductSaleAttr pmsProductSaleAttr = new PmsProductSaleAttr();
+        pmsProductSaleAttr.setProductId(spuId);
+        List<PmsProductSaleAttr> pmsProductSaleAttrs = pmsProductSaleAttrDao.queryAll(pmsProductSaleAttr);
+        for (PmsProductSaleAttr productSaleAttr : pmsProductSaleAttrs) {
+            PmsProductSaleAttrValue pmsProductSaleAttrValue = new PmsProductSaleAttrValue();
+            pmsProductSaleAttrValue.setSaleAttrId(productSaleAttr.getId());
+            List<PmsProductSaleAttrValue> pmsProductSaleAttrValues = pmsProductSaleAttrValueDao.queryAll(pmsProductSaleAttrValue);
+            productSaleAttr.setSpuSaleAttrValueList(pmsProductSaleAttrValues);
+        }
+        return pmsProductSaleAttrs;
+    }
+
+    @Override
+    public List<PmsProductImage> getSpuImageListBySpuId(Long spuId) {
+        PmsProductImage pmsProductImage = new PmsProductImage();
+        pmsProductImage.setProductId(spuId);
+        return pmsProductImageDao.queryAll(pmsProductImage);
     }
 }

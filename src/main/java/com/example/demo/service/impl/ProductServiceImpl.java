@@ -15,10 +15,7 @@ import org.springframework.util.CollectionUtils;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * @author Whyn
- * @date 2020/2/20 18:09
- */
+
 @Service
 public class ProductServiceImpl implements ProductService {
     Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
@@ -106,7 +103,8 @@ public class ProductServiceImpl implements ProductService {
 
     private int insertSpuInfo(PmsProductInfo pmsProductInfo) {
         //先插入商品信息,获取插入后的id
-        Long id = pmsProductInfoDao.insert(pmsProductInfo);
+        pmsProductInfoDao.insert(pmsProductInfo);
+        Long id = pmsProductInfo.getId();
         if (null == id || id <= 0) {
             return 0;
         }
@@ -135,7 +133,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     private void insertSaleAttr(PmsProductSaleAttr pmsProductSaleAttr) {
-        Long id = pmsProductSaleAttrDao.insert(pmsProductSaleAttr);
+        pmsProductSaleAttrDao.insert(pmsProductSaleAttr);
+        Long id = pmsProductSaleAttr.getId();
         if (null == id || id <= 0) {
             //商品销售属性插入失败,执行回滚
             logger.error("商品销售属性插入失败,执行回滚操作");

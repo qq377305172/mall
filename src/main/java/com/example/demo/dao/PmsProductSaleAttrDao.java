@@ -45,7 +45,7 @@ public interface PmsProductSaleAttrDao {
      * @param pmsProductSaleAttr 实例对象
      * @return 影响行数
      */
-    Long insert(PmsProductSaleAttr pmsProductSaleAttr);
+    int insert(PmsProductSaleAttr pmsProductSaleAttr);
 
     /**
      * 修改数据

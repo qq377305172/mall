@@ -63,4 +63,5 @@ public interface PmsSkuImageDao {
      */
     int deleteById(Long id);
 
+    PmsSkuImage queryOne(PmsSkuImage pmsSkuImage);
 }

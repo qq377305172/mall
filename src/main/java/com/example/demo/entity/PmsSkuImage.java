@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -43,11 +40,12 @@ public class PmsSkuImage implements Serializable {
     /**
      * 商品图片id
      */
-    private Long productImgId;
+    private Long spuImgId;
     /**
      * 是否默认
      */
     private String isDefault;
+
 
 
 }

@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.PmsProductInfo;
+import com.example.demo.entity.PmsProductSaleAttr;
 import com.example.demo.service.ProductService;
+import com.example.demo.util.FdfsUtil;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -47,7 +49,6 @@ public class SpuController {
      */
     @PostMapping("/fileUpload")
     public String fileUpload(@RequestParam("file") MultipartFile file) {
-        System.out.println(file.getOriginalFilename());
-        return "";
+        return FdfsUtil.uploadImage(file);
     }
 }

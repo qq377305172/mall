@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.PmsBaseAttrInfo;
-import com.example.demo.entity.PmsBaseAttrValue;
-import com.example.demo.entity.PmsBaseSaleAttr;
+import com.example.demo.entity.*;
 import com.example.demo.service.AttrService;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,8 +49,30 @@ public class AttrController {
         return attrService.saveAttrInfo(pmsBaseAttrInfo);
     }
 
+    /**
+     * 根据销售属性获取销售属性值
+     *
+     * @param attrId
+     * @return
+     */
     @PostMapping("/getAttrValueList")
     public List<PmsBaseAttrValue> getAttrValueList(Long attrId) {
         return attrService.getAttrValueListByAttrId(attrId);
+    }
+
+    /**
+     * 获取商品销售属性
+     */
+    @GetMapping("/spuSaleAttrList")
+    public List<PmsProductSaleAttr> spuSaleAttrList(Long spuId) {
+        return attrService.getSpuSaleAttrListBySpuId(spuId);
+    }
+    /**
+     * 获取商品图片信息
+     */
+    @GetMapping("spuImageList")
+    public List<PmsProductImage> spuImageList(Long spuId){
+        return attrService.getSpuImageListBySpuId(spuId);
+
     }
 }

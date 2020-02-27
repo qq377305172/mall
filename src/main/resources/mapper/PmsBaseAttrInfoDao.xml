@@ -59,7 +59,6 @@
     <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.example.demo.entity.PmsBaseAttrInfo">
         insert into gmall.pms_base_attr_info(attr_name, catalog3_id, is_enabled)
         values (#{attrName}, #{catalog3Id}, #{isEnabled})
-<!--        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">SELECT LAST_INSERT_ID() AS id</selectKey>-->
     </insert>
 
     <!--通过主键修改数据-->
