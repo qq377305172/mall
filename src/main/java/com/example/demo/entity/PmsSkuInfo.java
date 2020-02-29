@@ -65,5 +65,4 @@ public class PmsSkuInfo implements Serializable {
     @Transient
     private List<PmsSkuSaleAttrValue> skuSaleAttrValueList;
 
-
 }

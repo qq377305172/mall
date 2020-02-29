@@ -4,8 +4,6 @@ import com.example.demo.entity.PmsProductInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -16,8 +14,7 @@ import java.util.*;
  * @author Whyn
  * @date 2020/2/22 11:48
  */
-public class JacksonUtil {
-    private static final Logger logger = LoggerFactory.getLogger(JacksonUtil.class);
+public class JsonUtil {
     private static final ObjectMapper mapper = new ObjectMapper();
 
     /**
@@ -72,7 +69,7 @@ public class JacksonUtil {
         JavaType javaType = getCollectionType(List.class, clazz);
         List<T> list = null;
         try {
-            list = (List<T>) mapper.readValue(jsonArrayStr, javaType);
+            list = mapper.readValue(jsonArrayStr, javaType);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -88,7 +85,7 @@ public class JacksonUtil {
         JavaType javaType = getCollectionType(Set.class, clazz);
         Set<T> list = null;
         try {
-            list = (Set<T>) mapper.readValue(jsonArrayStr, javaType);
+            list = mapper.readValue(jsonArrayStr, javaType);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -127,18 +124,18 @@ public class JacksonUtil {
     }
 
     public static void main(String[] args) {
-        PmsProductInfo pmsProductInfo = new PmsProductInfo();
-        pmsProductInfo.setProductName("1");
-        PmsProductInfo pmsProductInfo2 = new PmsProductInfo();
-        pmsProductInfo2.setProductName("1");
-        Set<PmsProductInfo> list = new HashSet<>();
-        list.add(pmsProductInfo);
-        list.add(pmsProductInfo2);
-        Map<String, Object> map = new HashMap<>();
-        map.put("1", 1);
-        map.put("2", pmsProductInfo);
-        String s = map2Json(map);
-        System.out.println(s);
+//        PmsProductInfo pmsProductInfo = new PmsProductInfo();
+//        pmsProductInfo.setProductName("1");
+//        PmsProductInfo pmsProductInfo2 = new PmsProductInfo();
+//        pmsProductInfo2.setProductName("1");
+//        Set<PmsProductInfo> list = new HashSet<>();
+//        list.add(pmsProductInfo);
+//        list.add(pmsProductInfo2);
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("1", 1);
+//        map.put("2", pmsProductInfo);
+//        String s = map2Json(map);
+        System.out.println(obj2Json(""));
 //        String s = obj2JsonStr(pmsProductInfo);
 //        System.out.println(s);
 //        String s = "{\"id\":null,\"productName\":\"1\",\"description\":null,\"catalog3Id\":null,\"tmId\":null}";

@@ -2,25 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.PmsProductSaleAttrDao">
 
-    <resultMap type="com.example.demo.entity.PmsProductSaleAttr" id="PmsProductSaleAttrMap">
+    <resultMap type="com.example.demo.entity.PmsProductSaleAttr" id="PmsProductSaleAttrMap" autoMapping="true">
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="productId" column="product_id" jdbcType="INTEGER"/>
         <result property="saleAttrId" column="sale_attr_id" jdbcType="INTEGER"/>
         <result property="saleAttrName" column="sale_attr_name" jdbcType="VARCHAR"/>
+        <collection property="spuSaleAttrValueList"
+                    ofType="com.example.demo.entity.PmsProductSaleAttrValue" autoMapping="true">
+            <result property="id" column="value_id" jdbcType="INTEGER"/>
+        </collection>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="PmsProductSaleAttrMap">
-        select
-          id, product_id, sale_attr_id, sale_attr_name
+        select id,
+               product_id,
+               sale_attr_id,
+               sale_attr_name
         from gmall.pms_product_sale_attr
         where id = #{id}
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="PmsProductSaleAttrMap">
-        select
-          id, product_id, sale_attr_id, sale_attr_name
+        select id,
+               product_id,
+               sale_attr_id,
+               sale_attr_name
         from gmall.pms_product_sale_attr
         limit #{offset}, #{limit}
     </select>
@@ -28,7 +36,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="PmsProductSaleAttrMap">
         select
-          id, product_id, sale_attr_id, sale_attr_name
+        id, product_id, sale_attr_id, sale_attr_name
         from gmall.pms_product_sale_attr
         <where>
             <if test="id != null">
@@ -45,9 +53,20 @@
             </if>
         </where>
     </select>
+    <select id="querySaleAttrByChecked" resultMap="PmsProductSaleAttrMap">
+        select sa.*, sav.id AS value_id, sav.*, if(ssav.sku_id, 1, 0) as isChecked
+        from pms_product_sale_attr sa
+                 inner join pms_product_sale_attr_value sav on sa.product_id = sav.product_id
+            and sa.sale_attr_id = sav.sale_attr_id
+            and sa.product_id = #{productId}
+                 left join pms_sku_sale_attr_value ssav on sav.id = ssav.sale_attr_value_id
+            and ssav.sku_id = #{skuId}
+        ORDER BY sa.sale_attr_id, sav.sale_attr_value_name
+    </select>
 
     <!--新增所有列-->
-    <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.example.demo.entity.PmsProductSaleAttr">
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true"
+            parameterType="com.example.demo.entity.PmsProductSaleAttr">
         insert into gmall.pms_product_sale_attr(product_id, sale_attr_id, sale_attr_name)
         values (#{productId}, #{saleAttrId}, #{saleAttrName})
     </insert>
@@ -71,7 +90,9 @@
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from gmall.pms_product_sale_attr where id = #{id}
+        delete
+        from gmall.pms_product_sale_attr
+        where id = #{id}
     </delete>
 
 </mapper>

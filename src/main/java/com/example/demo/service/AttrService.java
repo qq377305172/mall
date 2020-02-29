@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.entity.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Whyn
@@ -20,4 +21,8 @@ public interface AttrService {
     List<PmsProductSaleAttr> getSpuSaleAttrListBySpuId(Long spuId);
 
     List<PmsProductImage> getSpuImageListBySpuId(Long spuId);
+
+    List<PmsProductSaleAttr> getAttrInfoBySkuId(Long id, Long skuId);
+
+    String getSkuSaleAttrValueInfos(Long productId);
 }

@@ -3,7 +3,7 @@ package com.example.demo.service.impl;
 import com.example.demo.dao.*;
 import com.example.demo.entity.*;
 import com.example.demo.service.AttrService;
-import org.apache.activemq.broker.region.policy.PendingSubscriberMessageStoragePolicy;
+import com.example.demo.util.JsonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,10 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Whyn
@@ -33,6 +36,8 @@ public class AttrServiceImpl implements AttrService {
     private PmsProductImageDao pmsProductImageDao;
     @Resource
     private PmsProductSaleAttrValueDao pmsProductSaleAttrValueDao;
+    @Resource
+    private PmsSkuInfoDao pmsSkuInfoDao;
 
     @Override
     public List<PmsBaseAttrInfo> queryAllByCatalog(Long catalog3Id) {
@@ -133,5 +138,57 @@ public class AttrServiceImpl implements AttrService {
         PmsProductImage pmsProductImage = new PmsProductImage();
         pmsProductImage.setProductId(spuId);
         return pmsProductImageDao.queryAll(pmsProductImage);
+    }
+
+    @Override
+    public List<PmsProductSaleAttr> getAttrInfoBySkuId(Long skuId, Long productId) {
+//        PmsProductSaleAttr pmsProductSaleAttr = new PmsProductSaleAttr();
+//        pmsProductSaleAttr.setProductId(skuId);
+//        List<PmsProductSaleAttr> pmsProductSaleAttrList = pmsProductSaleAttrDao.queryAll(pmsProductSaleAttr);
+//
+//        for (PmsProductSaleAttr productSaleAttr : pmsProductSaleAttrList) {
+//            PmsProductSaleAttrValue pmsProductSaleAttrValue = new PmsProductSaleAttrValue();
+//            pmsProductSaleAttrValue.setProductId(skuId);
+//            pmsProductSaleAttrValue.setSaleAttrId(productSaleAttr.getSaleAttrId());
+//            List<PmsProductSaleAttrValue> pmsProductSaleAttrValues = pmsProductSaleAttrValueDao.queryAll(pmsProductSaleAttrValue);
+//            productSaleAttr.setSpuSaleAttrValueList(pmsProductSaleAttrValues);
+//        }
+
+        return pmsProductSaleAttrDao.querySaleAttrByChecked(skuId, productId);
+    }
+
+//    @Resource
+//    RedisUtil redisUtil;
+
+//    @Override
+//    public String getSkuSaleAttrValueInfos(Long productId) {
+//        Prop prop = PropKit.use("redis_constants.properties");
+//        String sku_attr_key_prefix = prop.get("sku_attr_key_prefix");
+//        String sku_attr_key_suffix = prop.get("sku_attr_key_suffix");
+//        Jedis jedis = redisUtil.getJedis();
+//        String s = jedis.get("");
+//        if (StringUtils.isEmpty(s)) {
+//            String skuSaleAttrValueInfosFromDB = getSkuSaleAttrValueInfosFromDB(productId);
+//            jedis.set("", skuSaleAttrValueInfosFromDB);
+//            return skuSaleAttrValueInfosFromDB;
+//        }
+//        jedis.close();
+//        return s;
+//    }
+
+    public String getSkuSaleAttrValueInfos(Long productId) {
+        List<PmsSkuInfo> skuSaleAttrValueInfos = pmsSkuInfoDao.getSkuSaleAttrValueInfos(productId);
+        Map<String, Long> valuesSkuMapping = new HashMap<>();
+        for (PmsSkuInfo skuInfo : skuSaleAttrValueInfos) {
+            Long value = skuInfo.getId();
+            List<PmsSkuSaleAttrValue> skuSaleAttrValueList = skuInfo.getSkuSaleAttrValueList();
+            List<Long> keyList = new ArrayList<>();
+            for (PmsSkuSaleAttrValue pmsSkuSaleAttrValue : skuSaleAttrValueList) {
+                keyList.add(pmsSkuSaleAttrValue.getSaleAttrValueId());
+            }
+            valuesSkuMapping.put(org.apache.commons.lang.StringUtils.join(keyList, "|"), value);
+        }
+        String json = JsonUtil.map2Json(valuesSkuMapping);
+        return json;
     }
 }

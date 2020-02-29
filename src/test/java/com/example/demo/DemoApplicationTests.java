@@ -2,8 +2,9 @@ package com.example.demo;
 
 import com.example.demo.dao.PmsBaseAttrInfoDao;
 import com.example.demo.dao.PmsProductInfoDao;
-import com.example.demo.entity.PmsBaseAttrInfo;
-import com.example.demo.entity.PmsProductInfo;
+import com.example.demo.util.RedisUtil;
+import com.jfinal.kit.Prop;
+import com.jfinal.kit.PropKit;
 import org.csource.common.MyException;
 import org.csource.fastdfs.ClientGlobal;
 import org.csource.fastdfs.StorageClient;
@@ -24,19 +25,30 @@ public class DemoApplicationTests {
     PmsProductInfoDao pmsProductInfoDao;
     @Resource
     PmsBaseAttrInfoDao pmsBaseAttrInfoDao;
+    @Resource
+    RedisUtil redisUtil;
 
     @Test
     public void contextLoads2() {
+        Prop prop = PropKit.use("redis_constants.properties");
+        String sku_attr_key_prefix = prop.get("sku_info_prefix");
+        String sku_info_suffix = prop.get("sku_info_suffix");
+        System.err.println(sku_attr_key_prefix);
+        System.err.println(sku_info_suffix);
 //        PmsBaseAttrInfo pmsBaseAttrInfo = new PmsBaseAttrInfo();
 //        pmsBaseAttrInfo.setAttrName("测试");
 //        Long insert = pmsBaseAttrInfoDao.insert(pmsBaseAttrInfo);
 //        System.out.println(insert);
 
-        PmsProductInfo pmsProductInfo = new PmsProductInfo();
-        pmsProductInfo.setProductName("测试3");
-        pmsProductInfo.setDescription("测试3");
-        pmsProductInfoDao.insert(pmsProductInfo);
-        System.out.println(pmsProductInfo.getId());
+//        PmsProductInfo pmsProductInfo = new PmsProductInfo();
+//        pmsProductInfo.setProductName("测试3");
+//        pmsProductInfo.setDescription("测试3");
+//        pmsProductInfoDao.insert(pmsProductInfo);
+//        System.out.println(pmsProductInfo.getId());
+//        Jedis jedis = redisUtil.getJedis();
+//        jedis.set("test11", "1");
+//        String test11 = jedis.get("test11");
+//        System.out.println(test11);
     }
 
     @Test

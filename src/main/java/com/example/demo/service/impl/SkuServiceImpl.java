@@ -9,12 +9,17 @@ import com.example.demo.entity.PmsSkuImage;
 import com.example.demo.entity.PmsSkuInfo;
 import com.example.demo.entity.PmsSkuSaleAttrValue;
 import com.example.demo.service.SkuService;
+import com.example.demo.util.JsonUtil;
+import com.example.demo.util.RedisUtil;
+import com.jfinal.kit.Prop;
+import com.jfinal.kit.PropKit;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
+import redis.clients.jedis.Jedis;
 
 import javax.annotation.Resource;
-import javax.persistence.Transient;
 import java.util.List;
 
 /**
@@ -47,19 +52,64 @@ public class SkuServiceImpl implements SkuService {
         }
     }
 
+    @Resource
+    RedisUtil redisUtil;
+
     @Override
     public PmsSkuInfo getSkuInfo(Long skuId) {
-        PmsSkuInfo pmsSkuInfo = pmsSkuInfoDao.queryById(skuId);
+        Prop prop = PropKit.use("redis_constants.properties");
+        String prefix = prop.get("sku_info_prefix");
+        String suffix = prop.get("sku_info_suffix");
+        String lockSuffix = prop.get("sku_lock_suffix");
+        String key = prefix + skuId + suffix;
+        Jedis jedis = redisUtil.getJedis();
+        String jsonStr = jedis.get(key);
+        if (!StringUtils.isEmpty(jsonStr)) {
+            jedis.close();
+            return JsonUtil.json2Obj(jsonStr, PmsSkuInfo.class);
+        }
+        PmsSkuInfo pmsSkuInfo = null;
+        //加锁的key
+        String lockKey = prefix + lockSuffix + skuId + lockSuffix;
+        //分布式锁的过期时间,在此时间内,其他线程无法成功设置缓存
+        Integer lockCacheTime = prop.getInt("lock_cache_time");
+        //设置分布式锁
+        String status = jedis.set(lockKey, "1", "nx", "px", lockCacheTime);
+        jedis.close();
+        if ("OK".equals(status)) {
+            //设置成功,有权限在10秒内访问数据库
+            pmsSkuInfo = getSkuInfoFromDB(skuId);
+            if (null != pmsSkuInfo) {
+                //将mysql查询结果存入缓存
+                jedis.set(key, JsonUtil.obj2Json(pmsSkuInfo));
+            } else {
+                //数据库中不存在该数据
+                //防止缓存,将null或者空字符串存入缓存
+                Integer cache_time = prop.getInt("cache_time");
+                jedis.setex(key, cache_time, JsonUtil.obj2Json(""));
+            }
+            //在访问mysql后,将mysql的分布式锁释放
+            jedis.del(lockKey);
+        } else {
+            //设置失败,自旋(在该线程睡眠几秒后重新访问本方法)
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return getSkuInfo(skuId);
+        }
+        return pmsSkuInfo;
+    }
 
+    private PmsSkuInfo getSkuInfoFromDB(Long skuId) {
+        PmsSkuInfo pmsSkuInfo = pmsSkuInfoDao.queryById(skuId);
+        if (null == pmsSkuInfo)
+            return null;
         PmsSkuImage pmsSkuImage = new PmsSkuImage();
         pmsSkuImage.setSkuId(skuId);
         List<PmsSkuImage> pmsSkuImages = pmsSkuImageDao.queryAll(pmsSkuImage);
         pmsSkuInfo.setSkuImageList(pmsSkuImages);
-
-//        @Transient
-//        private List<PmsSkuAttrValue> skuAttrValueList;
-//        @Transient
-//        private List<PmsSkuSaleAttrValue> skuSaleAttrValueList;
 
         PmsSkuAttrValue pmsSkuAttrValue = new PmsSkuAttrValue();
         pmsSkuAttrValue.setSkuId(skuId);
