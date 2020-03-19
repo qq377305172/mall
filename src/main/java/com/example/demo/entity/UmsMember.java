@@ -96,6 +96,6 @@ public class UmsMember implements Serializable {
      * 历史积分数量
      */
     private Integer historyIntegration;
-
+    private String accessToken;
 
 }

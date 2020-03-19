@@ -21,6 +21,7 @@ import redis.clients.jedis.Jedis;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author Admin
@@ -68,28 +69,30 @@ public class SkuServiceImpl implements SkuService {
             jedis.close();
             return JsonUtil.json2Obj(jsonStr, PmsSkuInfo.class);
         }
-        PmsSkuInfo pmsSkuInfo = null;
+        PmsSkuInfo pmsSkuInfo;
         //加锁的key
         String lockKey = prefix + lockSuffix + skuId + lockSuffix;
         //分布式锁的过期时间,在此时间内,其他线程无法成功设置缓存
         Integer lockCacheTime = prop.getInt("lock_cache_time");
-        //设置分布式锁
-        String status = jedis.set(lockKey, "1", "nx", "px", lockCacheTime);
-        jedis.close();
+        //设置redis自带的分布式锁
+        UUID uuid = UUID.randomUUID();
+        String status = jedis.set(lockKey, uuid.toString(), "nx", "px", lockCacheTime);
         if ("OK".equals(status)) {
             //设置成功,有权限在10秒内访问数据库
             pmsSkuInfo = getSkuInfoFromDB(skuId);
             if (null != pmsSkuInfo) {
-                //将mysql查询结果存入缓存
+                //从数据库中查询到了该数据,将查询结果存入缓存
                 jedis.set(key, JsonUtil.obj2Json(pmsSkuInfo));
             } else {
                 //数据库中不存在该数据
-                //防止缓存,将null或者空字符串存入缓存
-                Integer cache_time = prop.getInt("cache_time");
-                jedis.setex(key, cache_time, JsonUtil.obj2Json(""));
+                //防止缓存穿透,将null或者空字符串存入缓存
+                Integer cacheTime = prop.getInt("cache_time");
+                jedis.setex(key, cacheTime, "");
             }
             //在访问mysql后,将mysql的分布式锁释放
-            jedis.del(lockKey);
+            if (uuid.toString().equals(jedis.get("lockKey"))) {
+                jedis.del(lockKey);
+            }
         } else {
             //设置失败,自旋(在该线程睡眠几秒后重新访问本方法)
             try {
@@ -99,13 +102,15 @@ public class SkuServiceImpl implements SkuService {
             }
             return getSkuInfo(skuId);
         }
+        jedis.close();
         return pmsSkuInfo;
     }
 
     private PmsSkuInfo getSkuInfoFromDB(Long skuId) {
         PmsSkuInfo pmsSkuInfo = pmsSkuInfoDao.queryById(skuId);
-        if (null == pmsSkuInfo)
+        if (null == pmsSkuInfo) {
             return null;
+        }
         PmsSkuImage pmsSkuImage = new PmsSkuImage();
         pmsSkuImage.setSkuId(skuId);
         List<PmsSkuImage> pmsSkuImages = pmsSkuImageDao.queryAll(pmsSkuImage);
@@ -145,8 +150,9 @@ public class SkuServiceImpl implements SkuService {
             for (PmsSkuImage pmsSkuImage : skuImageList) {
                 pmsSkuImage.setSkuId(id);
                 int insert = pmsSkuImageDao.insert(pmsSkuImage);
-                if (insert == 0)
+                if (insert == 0) {
                     throw new RuntimeException("回滚");
+                }
             }
         }
 
@@ -156,8 +162,9 @@ public class SkuServiceImpl implements SkuService {
             for (PmsSkuAttrValue skuAttrValue : skuAttrValueList) {
                 skuAttrValue.setSkuId(id);
                 int insert = pmsSkuAttrValueDao.insert(skuAttrValue);
-                if (insert == 0)
+                if (insert == 0) {
                     throw new RuntimeException("回滚");
+                }
             }
         }
         //保存sku销售属性值
@@ -166,8 +173,9 @@ public class SkuServiceImpl implements SkuService {
             for (PmsSkuSaleAttrValue pmsSkuSaleAttrValue : skuSaleAttrValueList) {
                 pmsSkuSaleAttrValue.setSkuId(id);
                 int insert = pmsSkuSaleAttrValueDao.insert(pmsSkuSaleAttrValue);
-                if (insert == 0)
+                if (insert == 0) {
                     throw new RuntimeException("回滚");
+                }
             }
         }
         return true;

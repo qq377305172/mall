@@ -2,11 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.PmsBaseAttrInfoDao">
 
-    <resultMap type="com.example.demo.entity.PmsBaseAttrInfo" id="PmsBaseAttrInfoMap">
+    <resultMap type="com.example.demo.entity.PmsBaseAttrInfo" id="PmsBaseAttrInfoMap" autoMapping="true">
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="attrName" column="attr_name" jdbcType="VARCHAR"/>
         <result property="catalog3Id" column="catalog3_id" jdbcType="INTEGER"/>
         <result property="isEnabled" column="is_enabled" jdbcType="VARCHAR"/>
+        <collection property="attrValueList" ofType="com.example.demo.entity.PmsBaseAttrValue"
+                    autoMapping="true">
+            <result property="id" column="value_id"/>
+        </collection>
     </resultMap>
 
     <!--查询单个-->
@@ -54,9 +58,16 @@
         FROM gmall.pms_base_attr_info
         WHERE catalog3_id = #{catalog3Id}
     </select>
+    <select id="getAttrinfosByValueId" resultMap="PmsBaseAttrInfoMap">
+        SELECT info.*, table_value.*, table_value.id value_id
+        FROM gmall.pms_base_attr_info info
+                 INNER JOIN gmall.pms_base_attr_value table_value ON info.id = table_value.attr_id
+        WHERE table_value.id IN (${sqlIn})
+    </select>
 
     <!--新增所有列-->
-    <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.example.demo.entity.PmsBaseAttrInfo">
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true"
+            parameterType="com.example.demo.entity.PmsBaseAttrInfo">
         insert into gmall.pms_base_attr_info(attr_name, catalog3_id, is_enabled)
         values (#{attrName}, #{catalog3Id}, #{isEnabled})
     </insert>

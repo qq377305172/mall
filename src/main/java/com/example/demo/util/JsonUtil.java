@@ -4,6 +4,7 @@ import com.example.demo.entity.PmsProductInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jfinal.kit.StrKit;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -123,6 +124,7 @@ public class JsonUtil {
         return jsonStr;
     }
 
+
     public static void main(String[] args) {
 //        PmsProductInfo pmsProductInfo = new PmsProductInfo();
 //        pmsProductInfo.setProductName("1");
@@ -143,4 +145,18 @@ public class JsonUtil {
 //        System.out.println(pmsProductInfo.toString());
     }
 
+    /**
+     * json转map
+     */
+    public static Map json2Map(String jsonStr) {
+        if (StrKit.isBlank(jsonStr))
+            return null;
+        Map map = null;
+        try {
+            map = mapper.readValue(jsonStr, Map.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
 }

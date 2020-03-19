@@ -25,8 +25,7 @@ public class RedisUtil {
     }
 
     public Jedis getJedis() {
-        Jedis jedis = jedisPool.getResource();
-        return jedis;
+        return jedisPool.getResource();
     }
 
 }

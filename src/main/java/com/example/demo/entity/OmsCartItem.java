@@ -4,10 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -39,7 +37,7 @@ public class OmsCartItem implements Serializable {
     /**
      * 添加到购物车的价格
      */
-    private Double price;
+    private BigDecimal price;
     /**
      * 销售属性1
      */
@@ -96,6 +94,9 @@ public class OmsCartItem implements Serializable {
      * 商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]
      */
     private String productAttr;
+    private int isChecked;
+    @Transient
+    private BigDecimal totalPrice;
 
 
 }

@@ -26,16 +26,50 @@
 
     <!--查询单个-->
     <select id="queryById" resultMap="UmsMemberMap">
-        select
-          id, member_level_id, username, password, nickname, phone, status, create_time, icon, gender, birthday, city, job, personalized_signature, source_type, integration, growth, luckey_count, history_integration
+        select id,
+               member_level_id,
+               username,
+               password,
+               nickname,
+               phone,
+               status,
+               create_time,
+               icon,
+               gender,
+               birthday,
+               city,
+               job,
+               personalized_signature,
+               source_type,
+               integration,
+               growth,
+               luckey_count,
+               history_integration
         from gmall.ums_member
         where id = #{id}
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="UmsMemberMap">
-        select
-          id, member_level_id, username, password, nickname, phone, status, create_time, icon, gender, birthday, city, job, personalized_signature, source_type, integration, growth, luckey_count, history_integration
+        select id,
+               member_level_id,
+               username,
+               password,
+               nickname,
+               phone,
+               status,
+               create_time,
+               icon,
+               gender,
+               birthday,
+               city,
+               job,
+               personalized_signature,
+               source_type,
+               integration,
+               growth,
+               luckey_count,
+               history_integration
         from gmall.ums_member
         limit #{offset}, #{limit}
     </select>
@@ -43,7 +77,8 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="UmsMemberMap">
         select
-          id, member_level_id, username, password, nickname, phone, status, create_time, icon, gender, birthday, city, job, personalized_signature, source_type, integration, growth, luckey_count, history_integration
+        id, member_level_id, username, password, nickname, phone, status, create_time, icon, gender, birthday, city,
+        job, personalized_signature, source_type, integration, growth, luckey_count, history_integration
         from gmall.ums_member
         <where>
             <if test="id != null">
@@ -105,11 +140,22 @@
             </if>
         </where>
     </select>
+    <select id="countUser" resultType="java.lang.Integer">
+        select count(*)
+        from gmall.ums_member
+        where username = #{username}
+          and password = #{password}
+          and status = 1
+    </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into gmall.ums_member(member_level_id, username, password, nickname, phone, status, create_time, icon, gender, birthday, city, job, personalized_signature, source_type, integration, growth, luckey_count, history_integration)
-        values (#{memberLevelId}, #{username}, #{password}, #{nickname}, #{phone}, #{status}, #{createTime}, #{icon}, #{gender}, #{birthday}, #{city}, #{job}, #{personalizedSignature}, #{sourceType}, #{integration}, #{growth}, #{luckeyCount}, #{historyIntegration})
+        insert into gmall.ums_member(member_level_id, username, password, nickname, phone, status, create_time, icon,
+                                     gender, birthday, city, job, personalized_signature, source_type, integration,
+                                     growth, luckey_count, history_integration)
+        values (#{memberLevelId}, #{username}, #{password}, #{nickname}, #{phone}, #{status}, #{createTime}, #{icon},
+                #{gender}, #{birthday}, #{city}, #{job}, #{personalizedSignature}, #{sourceType}, #{integration},
+                #{growth}, #{luckeyCount}, #{historyIntegration})
     </insert>
 
     <!--通过主键修改数据-->
@@ -176,7 +222,9 @@
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from gmall.ums_member where id = #{id}
+        delete
+        from gmall.ums_member
+        where id = #{id}
     </delete>
 
 </mapper>

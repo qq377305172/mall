@@ -63,4 +63,5 @@ public interface UmsMemberDao {
      */
     int deleteById(Long id);
 
+    int countUser(UmsMember umsMember);
 }

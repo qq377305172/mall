@@ -38,6 +38,8 @@ public class AttrServiceImpl implements AttrService {
     private PmsProductSaleAttrValueDao pmsProductSaleAttrValueDao;
     @Resource
     private PmsSkuInfoDao pmsSkuInfoDao;
+    @Resource
+    private PmsSkuAttrValueDao pmsSkuAttrValueDao;
 
     @Override
     public List<PmsBaseAttrInfo> queryAllByCatalog(Long catalog3Id) {
@@ -66,7 +68,7 @@ public class AttrServiceImpl implements AttrService {
         int result = pmsBaseAttrInfoDao.update(pmsBaseAttrInfo);
         if (result != 1) {
             logger.error("更新属性失败,执行回滚操作");
-            throw new RuntimeException();
+            throw new RuntimeException("更新属性失败,执行回滚操作");
         }
         //先删除该属性信息关联的属性值
         PmsBaseAttrValue deleteValues = new PmsBaseAttrValue();
@@ -79,17 +81,6 @@ public class AttrServiceImpl implements AttrService {
                 pmsBaseAttrValue.setAttrId(pmsBaseAttrInfo.getId());
                 int insertCount = pmsBaseAttrValueDao.insert(pmsBaseAttrValue);
                 result = insertCount == 1 ? 1 : 0;
-//                Long valueId = pmsBaseAttrValue.getId();
-//                if (null == valueId) {
-//                    //新增
-//                    pmsBaseAttrValue.setAttrId(pmsBaseAttrInfo.getId());
-//                    int i = pmsBaseAttrValueDao.insert(pmsBaseAttrValue);
-//                    result = i == 1 ? 1 : 0;
-//                } else {
-////                    修改
-//                    int u = pmsBaseAttrValueDao.update(pmsBaseAttrValue);
-//                    result = u == 1 ? 1 : 0;
-//                }
             }
         }
         return result;
@@ -104,11 +95,12 @@ public class AttrServiceImpl implements AttrService {
             throw new RuntimeException();
         }
         List<PmsBaseAttrValue> attrValueList = pmsBaseAttrInfo.getAttrValueList();
-        if (!CollectionUtils.isEmpty(attrValueList))
+        if (!CollectionUtils.isEmpty(attrValueList)) {
             for (PmsBaseAttrValue pmsBaseAttrValue : attrValueList) {
                 pmsBaseAttrValue.setAttrId(id);
                 pmsBaseAttrValueDao.insert(pmsBaseAttrValue);
             }
+        }
         return 1;
     }
 
@@ -142,18 +134,6 @@ public class AttrServiceImpl implements AttrService {
 
     @Override
     public List<PmsProductSaleAttr> getAttrInfoBySkuId(Long skuId, Long productId) {
-//        PmsProductSaleAttr pmsProductSaleAttr = new PmsProductSaleAttr();
-//        pmsProductSaleAttr.setProductId(skuId);
-//        List<PmsProductSaleAttr> pmsProductSaleAttrList = pmsProductSaleAttrDao.queryAll(pmsProductSaleAttr);
-//
-//        for (PmsProductSaleAttr productSaleAttr : pmsProductSaleAttrList) {
-//            PmsProductSaleAttrValue pmsProductSaleAttrValue = new PmsProductSaleAttrValue();
-//            pmsProductSaleAttrValue.setProductId(skuId);
-//            pmsProductSaleAttrValue.setSaleAttrId(productSaleAttr.getSaleAttrId());
-//            List<PmsProductSaleAttrValue> pmsProductSaleAttrValues = pmsProductSaleAttrValueDao.queryAll(pmsProductSaleAttrValue);
-//            productSaleAttr.setSpuSaleAttrValueList(pmsProductSaleAttrValues);
-//        }
-
         return pmsProductSaleAttrDao.querySaleAttrByChecked(skuId, productId);
     }
 
@@ -176,6 +156,7 @@ public class AttrServiceImpl implements AttrService {
 //        return s;
 //    }
 
+    @Override
     public String getSkuSaleAttrValueInfos(Long productId) {
         List<PmsSkuInfo> skuSaleAttrValueInfos = pmsSkuInfoDao.getSkuSaleAttrValueInfos(productId);
         Map<String, Long> valuesSkuMapping = new HashMap<>();
@@ -188,7 +169,29 @@ public class AttrServiceImpl implements AttrService {
             }
             valuesSkuMapping.put(org.apache.commons.lang.StringUtils.join(keyList, "|"), value);
         }
-        String json = JsonUtil.map2Json(valuesSkuMapping);
-        return json;
+        return JsonUtil.map2Json(valuesSkuMapping);
+    }
+
+    @Override
+    public List<PmsSkuInfo> getAllSkuInfo() {
+        List<PmsSkuInfo> pmsSkuInfoList = pmsSkuInfoDao.queryAll(null);
+        for (PmsSkuInfo pmsSkuInfo : pmsSkuInfoList) {
+            Long id = pmsSkuInfo.getId();
+            PmsSkuAttrValue pmsSkuAttrValue = new PmsSkuAttrValue();
+            pmsSkuAttrValue.setSkuId(id);
+            List<PmsSkuAttrValue> pmsSkuAttrValues = pmsSkuAttrValueDao.queryAll(pmsSkuAttrValue);
+            pmsSkuInfo.setSkuAttrValueList(pmsSkuAttrValues);
+        }
+        return pmsSkuInfoList;
+    }
+
+    @Override
+    public List<PmsBaseAttrInfo> getAttrinfosByValueId(String sqlIn) {
+        return pmsBaseAttrInfoDao.getAttrinfosByValueId(sqlIn);
+    }
+
+    @Override
+    public PmsSkuInfo getSkuById(Long skuId) {
+        return pmsSkuInfoDao.queryById(skuId);
     }
 }

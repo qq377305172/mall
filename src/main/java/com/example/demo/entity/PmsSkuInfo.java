@@ -6,6 +6,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -33,7 +34,7 @@ public class PmsSkuInfo implements Serializable {
     /**
      * 价格
      */
-    private Object price;
+    private BigDecimal price;
     /**
      * sku名称
      */
@@ -43,7 +44,7 @@ public class PmsSkuInfo implements Serializable {
      */
     private String skuDesc;
 
-    private Object weight;
+    private Double weight;
     /**
      * 品牌(冗余)
      */

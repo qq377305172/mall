@@ -16,6 +16,9 @@ import javax.annotation.Resource;
 import java.util.List;
 
 
+/**
+ * @author Admin
+ */
 @Service
 public class ProductServiceImpl implements ProductService {
     Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
@@ -33,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
         return pmsProductInfoDao.queryAllByCatalog(catalog3Id);
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public int saveSpuInfo(PmsProductInfo pmsProductInfo) {
         Long id = pmsProductInfo.getId();
@@ -62,8 +65,9 @@ public class ProductServiceImpl implements ProductService {
 
     private void updateProductImageInfo(PmsProductInfo pmsProductInfo) {
         List<PmsProductImage> spuImageList = pmsProductInfo.getSpuImageList();
-        if (CollectionUtils.isEmpty(spuImageList))
+        if (CollectionUtils.isEmpty(spuImageList)) {
             return;
+        }
         for (PmsProductImage pmsProductImage : spuImageList) {
             int updateCount = pmsProductImageDao.update(pmsProductImage);
             if (updateCount <= 0) {

@@ -25,4 +25,10 @@ public interface AttrService {
     List<PmsProductSaleAttr> getAttrInfoBySkuId(Long id, Long skuId);
 
     String getSkuSaleAttrValueInfos(Long productId);
+
+    List<PmsSkuInfo> getAllSkuInfo();
+
+    List<PmsBaseAttrInfo> getAttrinfosByValueId(String sqlIn);
+
+    PmsSkuInfo getSkuById(Long skuId);
 }

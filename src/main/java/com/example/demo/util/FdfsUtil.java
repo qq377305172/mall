@@ -1,6 +1,5 @@
 package com.example.demo.util;
 
-import com.example.demo.DemoApplication;
 import org.csource.common.MyException;
 import org.csource.fastdfs.ClientGlobal;
 import org.csource.fastdfs.StorageClient;
