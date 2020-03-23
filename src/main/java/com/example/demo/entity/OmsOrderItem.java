@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * 订单中所包含的商品(OmsOrderItem)实体类
@@ -46,11 +47,11 @@ public class OmsOrderItem implements Serializable {
     /**
      * 销售价格
      */
-    private Double productPrice;
+    private BigDecimal productPrice;
     /**
      * 购买数量
      */
-    private Integer productQuantity;
+    private BigDecimal productQuantity;
     /**
      * 商品sku编号
      */
@@ -90,7 +91,7 @@ public class OmsOrderItem implements Serializable {
     /**
      * 该商品经过优惠后的分解金额
      */
-    private Double realAmount;
+    private BigDecimal realAmount;
 
     private Integer giftIntegration;
 

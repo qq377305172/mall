@@ -1,11 +1,9 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.dao.*;
-import com.example.demo.entity.PmsProductImage;
-import com.example.demo.entity.PmsProductInfo;
-import com.example.demo.entity.PmsProductSaleAttr;
-import com.example.demo.entity.PmsProductSaleAttrValue;
+import com.example.demo.entity.*;
 import com.example.demo.service.ProductService;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -30,6 +28,8 @@ public class ProductServiceImpl implements ProductService {
     PmsProductSaleAttrValueDao pmsProductSaleAttrValueDao;
     @Resource
     PmsProductImageDao pmsProductImageDao;
+    @Resource
+    private PmsSkuInfoDao pmsSkuInfoDao;
 
     @Override
     public List<PmsProductInfo> queryAllByCatalog(Integer catalog3Id) {
@@ -47,6 +47,11 @@ public class ProductServiceImpl implements ProductService {
             //修改
             return updateSpuInfo(pmsProductInfo);
         }
+    }
+
+    @Override
+    public List<PmsSkuInfo> listSkuInfoBySkuIds(List<Long> skuIds) {
+        return pmsSkuInfoDao.queryByIds(StringUtils.join(skuIds, ","));
     }
 
 

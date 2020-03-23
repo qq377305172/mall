@@ -2,6 +2,7 @@ package com.example.demo.dao;
 
 import com.example.demo.entity.OmsOrder;
 import org.apache.ibatis.annotations.Param;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-02-18 16:46:44
  */
-public interface OmsOrderDao {
+public interface OmsOrderDao extends Mapper<OmsOrder> {
 
     /**
      * 通过ID查询单条数据
@@ -25,7 +26,7 @@ public interface OmsOrderDao {
      * 查询指定行数据
      *
      * @param offset 查询起始位置
-     * @param limit 查询条数
+     * @param limit  查询条数
      * @return 对象列表
      */
     List<OmsOrder> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);

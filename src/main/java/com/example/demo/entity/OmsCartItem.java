@@ -33,7 +33,7 @@ public class OmsCartItem implements Serializable {
     /**
      * 购买数量
      */
-    private Integer quantity;
+    private BigDecimal quantity;
     /**
      * 添加到购物车的价格
      */

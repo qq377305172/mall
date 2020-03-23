@@ -22,6 +22,7 @@
         <result property="growth" column="growth" jdbcType="INTEGER"/>
         <result property="luckeyCount" column="luckey_count" jdbcType="INTEGER"/>
         <result property="historyIntegration" column="history_integration" jdbcType="INTEGER"/>
+        <result property="accessToken" column="access_token" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
@@ -44,7 +45,8 @@
                integration,
                growth,
                luckey_count,
-               history_integration
+               history_integration,
+               access_token
         from gmall.ums_member
         where id = #{id}
     </select>
@@ -69,16 +71,24 @@
                integration,
                growth,
                luckey_count,
-               history_integration
+               history_integration,
+               access_token
         from gmall.ums_member
         limit #{offset}, #{limit}
+    </select>
+    <select id="countUser" resultType="java.lang.Integer">
+        select count(*)
+        from gmall.ums_member
+        where username = #{username}
+          and password = #{password}
+          and status = 1
     </select>
 
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="UmsMemberMap">
         select
         id, member_level_id, username, password, nickname, phone, status, create_time, icon, gender, birthday, city,
-        job, personalized_signature, source_type, integration, growth, luckey_count, history_integration
+        job, personalized_signature, source_type, integration, growth, luckey_count, history_integration, access_token
         from gmall.ums_member
         <where>
             <if test="id != null">
@@ -138,24 +148,20 @@
             <if test="historyIntegration != null">
                 and history_integration = #{historyIntegration}
             </if>
+            <if test="accessToken != null and accessToken != ''">
+                and access_token = #{accessToken}
+            </if>
         </where>
-    </select>
-    <select id="countUser" resultType="java.lang.Integer">
-        select count(*)
-        from gmall.ums_member
-        where username = #{username}
-          and password = #{password}
-          and status = 1
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
         insert into gmall.ums_member(member_level_id, username, password, nickname, phone, status, create_time, icon,
                                      gender, birthday, city, job, personalized_signature, source_type, integration,
-                                     growth, luckey_count, history_integration)
+                                     growth, luckey_count, history_integration, access_token)
         values (#{memberLevelId}, #{username}, #{password}, #{nickname}, #{phone}, #{status}, #{createTime}, #{icon},
                 #{gender}, #{birthday}, #{city}, #{job}, #{personalizedSignature}, #{sourceType}, #{integration},
-                #{growth}, #{luckeyCount}, #{historyIntegration})
+                #{growth}, #{luckeyCount}, #{historyIntegration}, #{accessToken})
     </insert>
 
     <!--通过主键修改数据-->
@@ -215,6 +221,9 @@
             </if>
             <if test="historyIntegration != null">
                 history_integration = #{historyIntegration},
+            </if>
+            <if test="accessToken != null and accessToken != ''">
+                access_token = #{accessToken},
             </if>
         </set>
         where id = #{id}

@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.PmsProductInfo;
+import com.example.demo.entity.PmsSkuInfo;
 
 import java.util.List;
 
@@ -12,4 +13,6 @@ public interface ProductService {
     List<PmsProductInfo> queryAllByCatalog(Integer catalog3Id);
 
     int saveSpuInfo(PmsProductInfo pmsProductInfo);
+
+    List<PmsSkuInfo> listSkuInfoBySkuIds(List<Long> skuIds);
 }

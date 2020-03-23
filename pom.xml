@@ -30,6 +30,13 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>com.alipay</groupId>
+            <artifactId>alipay-sdk</artifactId>
+            <version>3.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/alipay-sdk-java20180104135026.jar</systemPath>
+        </dependency>
 
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
@@ -146,6 +153,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.1.5</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

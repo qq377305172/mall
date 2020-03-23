@@ -2,6 +2,7 @@ package com.example.demo.dao;
 
 import com.example.demo.entity.PmsSkuInfo;
 import org.apache.ibatis.annotations.Param;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-02-18 16:46:45
  */
-public interface PmsSkuInfoDao {
+public interface PmsSkuInfoDao extends Mapper<PmsSkuInfo> {
 
     /**
      * 通过ID查询单条数据
@@ -64,4 +65,6 @@ public interface PmsSkuInfoDao {
     int deleteById(Long id);
 
     List<PmsSkuInfo> getSkuSaleAttrValueInfos(@Param("productId") Long productId);
+
+    List<PmsSkuInfo> queryByIds(@Param("join") String join);
 }

@@ -91,6 +91,19 @@
                                 si.id = sav.sku_id
         WHERE si.product_id = #{productId}
     </select>
+    <select id="queryByIds" resultType="com.example.demo.entity.PmsSkuInfo">
+        select id,
+               product_id,
+               price,
+               sku_name,
+               sku_desc,
+               weight,
+               tm_id,
+               catalog3_id,
+               sku_default_img
+        from gmall.pms_sku_info
+        where id IN (${join})
+    </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">

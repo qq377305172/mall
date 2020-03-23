@@ -23,4 +23,6 @@ public interface CartService {
     List<OmsCartItem> getCartByMemberId(Long memberId);
 
     void checkCart(Long memberId, long skuId, int isChecked);
+
+    int deleteBoughtProducts(Long memberId, List<OmsCartItem> boughtProductIdList);
 }

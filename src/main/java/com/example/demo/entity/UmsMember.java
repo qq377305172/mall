@@ -15,13 +15,13 @@ import java.io.Serializable;
  * 会员表(UmsMember)实体类
  *
  * @author makejava
- * @since 2020-02-21 15:32:18
+ * @since 2020-03-21 09:39:44
  */
 @Getter
 @Setter
 @ToString
 public class UmsMember implements Serializable {
-    private static final long serialVersionUID = -14838925693940791L;
+    private static final long serialVersionUID = 453499498894075381L;
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,7 +63,7 @@ public class UmsMember implements Serializable {
     /**
      * 生日
      */
-    private Object birthday;
+    private Date birthday;
     /**
      * 所做城市
      */
@@ -96,6 +96,10 @@ public class UmsMember implements Serializable {
      * 历史积分数量
      */
     private Integer historyIntegration;
+
     private String accessToken;
+    private Long sourceUid;
+    private String accessCode;
+
 
 }

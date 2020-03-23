@@ -1,6 +1,7 @@
 package com.example.demo.util;
 
 import com.example.demo.entity.PmsProductInfo;
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,6 +10,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.*;
 
 /**
@@ -124,7 +126,6 @@ public class JsonUtil {
         return jsonStr;
     }
 
-
     public static void main(String[] args) {
 //        PmsProductInfo pmsProductInfo = new PmsProductInfo();
 //        pmsProductInfo.setProductName("1");
@@ -148,12 +149,24 @@ public class JsonUtil {
     /**
      * json转map
      */
-    public static Map json2Map(String jsonStr) {
+    public static Map<String, Object> json2Map(String jsonStr) {
         if (StrKit.isBlank(jsonStr))
             return null;
-        Map map = null;
+        Map<String, Object> map = null;
         try {
-            map = mapper.readValue(jsonStr, Map.class);
+            map = (Map<String, Object>) mapper.readValue(jsonStr, Map.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
+
+    public static Map<String, String> json2MapStr(String jsonStr) {
+        if (StrKit.isBlank(jsonStr))
+            return null;
+        Map<String, String> map = null;
+        try {
+            map = (Map<String, String>) mapper.readValue(jsonStr, Map.class);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -147,16 +147,16 @@
 <script type="text/javascript">
 
     function toTrade() {
-        window.location.href = "127.0.0.1:9000/toTrade";
+        window.location.href = "http://127.0.0.1:9000/toTrade";
     }
 
     function toItem(skuId) {
-        window.location.href = "127.0.0.1:9000/" + skuId + ".html";
+        window.location.href = "http://127.0.0.1:9000/" + skuId + ".html";
     }
 
     function login() {
         var s = encodeURIComponent("http://127.0.0.1:9000/cartList");
-        window.location.href = "127.0.0.1:9000/index?originUrl=" + s;
+        window.location.href = "http://127.0.0.1:9000/index?originUrl=" + s;
     }
 
     function checkSku(chkbox) {

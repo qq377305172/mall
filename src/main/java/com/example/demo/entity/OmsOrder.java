@@ -4,12 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 订单表(OmsOrder)实体类
@@ -48,31 +47,31 @@ public class OmsOrder implements Serializable {
     /**
      * 订单总金额
      */
-    private Double totalAmount;
+    private BigDecimal totalAmount;
     /**
      * 应付金额（实际支付金额）
      */
-    private Double payAmount;
+    private BigDecimal payAmount;
     /**
      * 运费金额
      */
-    private Double freightAmount;
+    private BigDecimal freightAmount;
     /**
      * 促销优化金额（促销价、满减、阶梯价）
      */
-    private Double promotionAmount;
+    private BigDecimal promotionAmount;
     /**
      * 积分抵扣金额
      */
-    private Double integrationAmount;
+    private BigDecimal integrationAmount;
     /**
      * 优惠券抵扣金额
      */
-    private Double couponAmount;
+    private BigDecimal couponAmount;
     /**
      * 管理员后台调整订单使用的折扣金额
      */
-    private Double discountAmount;
+    private BigDecimal discountAmount;
     /**
      * 支付方式：0->未支付；1->支付宝；2->微信
      */
@@ -197,6 +196,7 @@ public class OmsOrder implements Serializable {
      * 修改时间
      */
     private Date modifyTime;
-
+    @Transient
+    private List<OmsOrderItem> omsOrderItemList;
 
 }
