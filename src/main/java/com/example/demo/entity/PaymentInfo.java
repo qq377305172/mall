@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -36,7 +37,7 @@ public class PaymentInfo implements Serializable {
     /**
      * 订单编号
      */
-    private String orderId;
+    private Long orderId;
     /**
      * 支付宝交易编号
      */
@@ -44,7 +45,7 @@ public class PaymentInfo implements Serializable {
     /**
      * 支付金额
      */
-    private Double totalAmount;
+    private BigDecimal totalAmount;
     /**
      * 交易内容
      */

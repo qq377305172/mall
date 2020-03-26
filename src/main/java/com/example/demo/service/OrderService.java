@@ -21,4 +21,6 @@ public interface OrderService {
     boolean checkPrice(Long productSkuId, BigDecimal price);
 
     int saveOrder(OmsOrder omsOrder);
+
+    OmsOrder getOrderByTradeNo(String tradeNo);
 }

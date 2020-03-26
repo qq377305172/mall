@@ -80,7 +80,7 @@ public class AuthInterceptor implements HandlerInterceptor {
         }
         //当前请求的方法需要登录验证成功,且用户登录验证成功
         //更新cookie中的token
-        CookieUtil.setCookie(request, response, "oldToken", token, 60 * 10, true);
+        CookieUtil.setCookie(request, response, "oldToken", token, 60 * 30, true);
         //向request域中设置会员信息
         request.setAttribute("memberId", userMap.get("memberId"));
         request.setAttribute("nickName", userMap.get("nickName"));

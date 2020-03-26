@@ -25,7 +25,7 @@
           </dd>
           <dd>
             <span>推荐使用</span>
-            <span>扫码支付请您在<font>24小时</font>内完成支付，否则订单会被自动取消(库存紧订单请参见详情页时限)</span>
+            <span>扫码支付请您在<span>24小时</span>内完成支付，否则订单会被自动取消(库存紧订单请参见详情页时限)</span>
             <span>订单详细</span>
           </dd>
         </dl>
@@ -63,7 +63,8 @@
     </div>
 
     <form    method="post" id="paymentForm">
-
+         <input type="hidden" name="tradeNo" th:value="${tradeNo}" >
+         <input type="hidden" name="totalAmount" th:value="${totalAmount}" >
          <input type="hidden" name="orderId" th:value="${orderId}" >
     </form>
 
@@ -77,7 +78,7 @@
 
           })
 
-      })
+      });
 
 
 

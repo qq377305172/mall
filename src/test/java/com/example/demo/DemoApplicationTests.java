@@ -61,15 +61,15 @@ public class DemoApplicationTests {
 //        http://127.0.0.1:9000/vlogin?code=6e36ac3d1e4f228a758fa1dd20c85c26
 //        String s = HttpClientUtil.doGet(url);
 //        String s1 = HttpClientUtil.doGet("http://127.0.0.1:9000/success?code=f00d6de6e4bc3f04fa5353b9dc5da744");
-        Map<String, String> paramMap = new HashMap<>();
-        paramMap.put("client_id", "4246669400");
-        paramMap.put("client_secret", "f00d6de6e4bc3f04fa5353b9dc5da744");
-        paramMap.put("grant_type", "authorization_code");
-        paramMap.put("redirect_uri", "http://127.0.0.1:9000/vlogin");
-        paramMap.put("code", "6e36ac3d1e4f228a758fa1dd20c85c26");
-//        String s2 = HttpClientUtil.doPost("https://api.weibo.com/oauth2/access_token", paramMap);
-        String s = HttpClientUtil.doGet("https://api.weibo.com/2/users/show.json?access_token=2.00xDLLIHkha5dE8cd28c0d80yvhbWC&uid=1");
-        System.err.println(s);
+//        Map<String, String> paramMap = new HashMap<>();
+//        paramMap.put("client_id", "4246669400");
+//        paramMap.put("client_secret", "f00d6de6e4bc3f04fa5353b9dc5da744");
+//        paramMap.put("grant_type", "authorization_code");
+//        paramMap.put("redirect_uri", "http://127.0.0.1:9000/vlogin");
+//        paramMap.put("code", "6e36ac3d1e4f228a758fa1dd20c85c26");
+////        String s2 = HttpClientUtil.doPost("https://api.weibo.com/oauth2/access_token", paramMap);
+//        String s = HttpClientUtil.doGet("https://api.weibo.com/2/users/show.json?access_token=2.00xDLLIHkha5dE8cd28c0d80yvhbWC&uid=1");
+//        System.err.println(s);
 
 //        Map<String, Object> map = new HashMap<>();
 //        map.put("nick_name", "阿斯达斯");

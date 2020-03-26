@@ -13,4 +13,8 @@ public class CommonUtil {
     public static Long getMemberId(HttpServletRequest request) {
         return Integer.valueOf(String.valueOf(request.getAttribute("memberId"))).longValue();
     }
+
+    public static String getNickName(HttpServletRequest request) {
+        return String.valueOf(request.getAttribute("nickName"));
+    }
 }

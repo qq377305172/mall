@@ -2,6 +2,7 @@ package com.example.demo.dao;
 
 import com.example.demo.entity.PaymentInfo;
 import org.apache.ibatis.annotations.Param;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-02-18 16:46:44
  */
-public interface PaymentInfoDao {
+public interface PaymentInfoDao extends Mapper<PaymentInfo> {
 
     /**
      * 通过ID查询单条数据

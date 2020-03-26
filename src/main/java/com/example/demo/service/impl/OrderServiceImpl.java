@@ -93,4 +93,11 @@ public class OrderServiceImpl implements OrderService {
     public int saveOrder(OmsOrder omsOrder) {
         return omsOrderDao.insertSelective(omsOrder);
     }
+
+    @Override
+    public OmsOrder getOrderByTradeNo(String tradeNo) {
+        OmsOrder omsOrder = new OmsOrder();
+        omsOrder.setOrderSn(tradeNo);
+        return omsOrderDao.selectOne(omsOrder);
+    }
 }

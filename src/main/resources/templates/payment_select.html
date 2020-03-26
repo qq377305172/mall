@@ -63,7 +63,8 @@
     </div>
 
     <form    method="post" id="paymentForm">
-
+      <input type="hidden" name="tradeNo" th:value="${tradeNo}" >
+      <input type="hidden" name="totalAmount" th:value="${totalAmount}" >
          <input type="hidden" name="orderId" th:value="${orderId}" >
     </form>
 
@@ -74,12 +75,8 @@
           $("#paymentButton").click(function () {
               $("#paymentForm").attr("action","/"+$("input[type='radio']:checked").val()+"/submit")  ;
               $("#paymentForm").submit();
-              console.log($("#paymentForm").html()) ;
-              console.log($("#paymentForm").attr("action")) ;
           })
-
-
-      })
+      });
 
 
 
